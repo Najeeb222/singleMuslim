@@ -12,7 +12,7 @@ export let theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["regular", "sans-serif"].join(","),
+    fontFamily: ["Roboto", "sans-serif"].join(","),
     h1: {
       fontWeight: 600,
       fontSize: "30px",
@@ -52,8 +52,8 @@ export let theme = createTheme({
       lineHeight: "20px",
     },
     body2: {
-      fontWeight: 400,
-      fontSize: "14px",
+      fontWeight: 300,
+      fontSize: "12px",
       lineHeight: "18px",
     },
   },
@@ -62,15 +62,93 @@ export let theme = createTheme({
 theme = {
   ...theme,
   components: {
+    MuiSlider: {
+      styleOverrides: {
+        root: {
+          height: 10,
+          color: "rgba(11,173,11,.17)",
+        },
+        thumb: {
+          height: 18,
+          width: 18,
+          backgroundColor: COLORS.green.main,
+          border: "2px solid currentColor",
+          "&:hover": {
+            boxShadow: "0 0 0 8px rgba(76, 175, 80, 0.16)",
+          },
+        },
+        track: {
+          height: 10,
+        },
+        rail: {
+          height: 10,
+          opacity: 0.5,
+          backgroundColor: COLORS.white.grayWhite,
+          border: `1px solid ${COLORS.gray.lightGray}`,
+        },
+      },
+    },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          width: 80,
+          height: 25,
+          padding: 0,
+        },
+        switchBase: {
+          padding: 2,
+          "&.Mui-checked": {
+            transform: "translateX(55px)",
+            color: "white",
+            "& + .MuiSwitch-track": {
+              backgroundColor: "green",
+              "&:before": {
+                content: '"Live"',
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "12px",
+                color: "white",
+              },
+            },
+          },
+        },
+        thumb: {
+          width: 20,
+          height: 20,
+        },
+        track: {
+          backgroundColor: COLORS.red.main,
+          borderRadius: 30,
+          position: "relative",
+          opacity: 1,
+          "&:before": {
+            content: '"Hidden"',
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "12px",
+            color: "white",
+          },
+        },
+      },
+    },
+
     MuiButton: {
       styleOverrides: {
         root: {
           fontSize: "16px",
           fontWeight: 400,
           borderRadius: "4px",
-          padding: "12px 16px ",
+          padding: "0 ",
           textTransform: "none",
-          height: "56px",
+          height: "auto",
           whiteSpace: "nowrap",
           [theme.breakpoints.down("sm")]: {
             fontSize: "14px",
@@ -84,10 +162,14 @@ theme = {
           height: "56px",
           color: COLORS.white.main,
           "&:hover": {
-            backgroundColor: COLORS.primary.main,
+            backgroundColor: COLORS,
             boxShadow: "none",
           },
           "&.Mui-disabled": {
+<<<<<<< Updated upstream
+=======
+            backgroundColor: COLORS,
+>>>>>>> Stashed changes
             color: "white",
             opacity: 0.6,
           },
@@ -111,8 +193,17 @@ theme = {
           },
         },
       },
+
       defaultProps: {
         disableRipple: false,
+      },
+    },
+    MuiCssBaseline: {
+      styleOverrides: {
+        a: {
+          textDecoration: "none",
+          color: COLORS.dark.lightblack,
+        },
       },
     },
 
@@ -121,10 +212,10 @@ theme = {
         root: {
           borderRadius: 8,
           height: 44,
+          border: `1px solid ${COLORS.gray.lightGray}`,
           color: COLORS.white.main,
           background: "transparent",
           "& fieldset": {
-            border: `transparent`,
             padding: "12px 16px",
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -154,6 +245,5 @@ theme = {
         },
       },
     },
-
   },
 };

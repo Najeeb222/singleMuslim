@@ -1,12 +1,11 @@
-import { HomeContainer } from "@muc/modules"
+import { HomeContainer } from "@muc/modules";
 
 const Home = () => {
   return (
-    <div>
-      <HomeContainer/>
-      
-    </div>
-  )
-}
+    <>
+      <HomeContainer />
+    </>
+  );
+};
 
-export default Home
+export default Home;

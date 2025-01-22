@@ -1,12 +1,15 @@
-import Routes from "../Routes/Routes"
-
+import { ThemeProvider } from "@emotion/react";
+import Routes from "../Routes/Routes";
+import { theme } from "@muc/styles";
+import { CssBaseline } from "@mui/material";
 
 const App = () => {
   return (
-    <div>
-    <Routes/>
-    </div>
-  )
-}
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Routes />
+    </ThemeProvider>
+  );
+};
 
-export default App
+export default App;

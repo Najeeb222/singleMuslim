@@ -1,16 +1,16 @@
-import { Box } from "@mui/material"
-import { Footer, Navbar } from "../layout"
+import { Box } from "@mui/material";
+import { Footer, Navbar } from "../layout";
+import LandingNavbar from "../LandingNavbar/LandingNavbar";
 
-
-const AppLayout = ({children}:any) => {
+const AppLayout = ({ children }: any) => {
   return (
     <>
-    <Navbar/>
-    <Box>{children}</Box>
-    <Footer/>
-      
+      <Navbar/>
+      {/* <LandingNavbar /> */}
+      <Box>{children}</Box>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default AppLayout
+export default AppLayout;
