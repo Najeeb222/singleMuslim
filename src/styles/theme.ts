@@ -88,7 +88,6 @@ theme = {
             boxShadow: "none",
           },
           "&.Mui-disabled": {
-            backgroundColor: COLORS.primary.lightBrown,
             color: "white",
             opacity: 0.6,
           },
