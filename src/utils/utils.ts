@@ -24,12 +24,15 @@ import { COLORS } from "@muc/constants";
 //   },
 // };
 
-
-
 export const FilterButton = {
   fontSize: "12px",
   color: COLORS.dark.main,
   bgcolor: COLORS.white.grayWhite,
   padding: "4px 14px",
   height: "auto",
+};
+
+export const MembershipStyel = {
+  color: COLORS.secondary.main,
+  fontSize: "50px",
 };

@@ -4,8 +4,13 @@ import MessagesBox from "../../components/MessagesBox/MessagesBox";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { CustomDetailCard } from "@muc/components";
-import { COLORS, settingData } from "@muc/constants";
-import { QuestionAnswer, SmsOutlined } from "@mui/icons-material";
+import { COLORS, privacyData, settingData } from "@muc/constants";
+import {
+ 
+  PlayCircleFilledWhiteOutlined,
+  QuestionAnswer,
+  SmsOutlined,
+} from "@mui/icons-material";
 
 const HomeContainer = () => {
   return (
@@ -17,7 +22,12 @@ const HomeContainer = () => {
               <UserProfile />
               <Stack
                 direction={"row"}
-                sx={{ flexWrap: "wrap", gap: "16px", padding: "10px" }}
+                sx={{
+                  flexWrap: "wrap",
+                  gap: "16px",
+                  padding: "10px",
+                  mb: "23px",
+                }}
               >
                 {settingData.map((item) => (
                   <CustomDetailCard
@@ -31,7 +41,7 @@ const HomeContainer = () => {
               </Stack>
               <Box
                 position={"relative"}
-                sx={{ width: "100%", height: "175px" }}
+                sx={{ width: "100%", height: "175px", mb: "23px" }}
               >
                 <Box
                   component={"img"}
@@ -61,7 +71,12 @@ const HomeContainer = () => {
               </Box>
               <Stack
                 direction={"row"}
-                sx={{ flexWrap: "wrap", gap: "16px", padding: "10px" }}
+                sx={{
+                  flexWrap: "wrap",
+                  gap: "16px",
+                  padding: "10px",
+                  mb: "23px",
+                }}
               >
                 <CustomDetailCard
                   title="Help & Support"
@@ -80,6 +95,43 @@ const HomeContainer = () => {
                     color: COLORS.green.lightGreen,
                   }}
                 />
+              </Stack>
+              <Box
+                position={"relative"}
+                sx={{ width: "100%", height: "268px", mb: "23px" }}
+              >
+                <Box
+                  component={"img"}
+                  src="/assets/images/service_Detail_pic.jpg"
+                  alt="story"
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "16px",
+                  }}
+                />
+                <PlayCircleFilledWhiteOutlined
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%,-50%)",
+                    fontSize: "64px",
+                    color: COLORS.white.main,
+                  }}
+                />
+              </Box>
+              <Stack direction={"row"} sx={{ flexWrap: "wrap", gap: "16px" }}>
+                {privacyData.map((item) => (
+                  <CustomDetailCard
+                    title={item.title}
+                    icon={item.icon}
+                    iconStyles={item.iconStyles}
+                    backgroundColor={item.backgroundColor}
+                    textColor={item.textColor}
+                  />
+                ))}
               </Stack>
             </Grid>
             <Grid item md={7}>

@@ -1,8 +1,12 @@
 import React from "react";
 import { COLORS } from "./colors";
 import {
+  AutoStories,
   BlockOutlined,
   CalendarMonth,
+  EditNote,
+  FeedOutlined,
+  Security,
   Sms,
   ViewQuilt,
 } from "@mui/icons-material";
@@ -131,6 +135,36 @@ export const settingData = [
     iconStyles: { fontSize: "60px", color: COLORS.purple.dark },
   },
 ];
+export const privacyData = [
+  {
+    title: "Success Stories",
+    icon: React.createElement(AutoStories),
+    backgroundColor: "transparent",
+    textColor: COLORS.orange.main,
+    iconStyles: { fontSize: "60px", color: COLORS.orange.main },
+  },
+  {
+    title: "In The News",
+    icon: React.createElement(FeedOutlined),
+    backgroundColor: "transparent",
+    textColor: COLORS.green.lightGreen,
+    iconStyles: { fontSize: "60px", color: COLORS.green.lightGreen },
+  },
+  {
+    title: "Term and Conditions",
+    icon: React.createElement(EditNote),
+    backgroundColor: "transparent",
+    textColor: COLORS.primary.main,
+    iconStyles: { fontSize: "60px", color: COLORS.primary.main },
+  },
+  {
+    title: "Privacy and Security",
+    icon: React.createElement(Security),
+    backgroundColor: "transparent",
+    textColor: COLORS.secondary.main,
+    iconStyles: { fontSize: "60px", color: COLORS.secondary.main },
+  },
+];
 
 export const userData = [
   {
@@ -141,6 +175,7 @@ export const userData = [
     countryflag: "https://flagcdn.com/w320/bc.png",
     name: "User 1",
     age: 21,
+    religon: "sunni",
     rating: 4.1,
   },
   {

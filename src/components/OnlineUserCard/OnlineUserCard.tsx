@@ -6,25 +6,28 @@ import CardActionArea from "@mui/material/CardActionArea";
 import { COLORS } from "@muc/constants";
 import { Box, Rating, Stack } from "@mui/material";
 
-const CustomCard = (props: any) => {
+const OnlineUserCard = (props: any) => {
   return (
     <Card
       sx={{
-        maxWidth: 195,
+        width: "320px",
         ":hover": {
           scale: "1.1",
           transition: "all ease 0.5s",
         },
       }}
     >
-      <CardActionArea>
+      <CardActionArea sx={{ display: "flex", width: "100%" }}>
         <CardMedia
           component="img"
-          height="194"
-          width={"100%"}
           image={props.img}
           alt="green iguana"
-          sx={{ position: "relative", objectFit: "cover" }}
+          sx={{
+            position: "relative",
+            objectFit: "cover",
+            width: "158px",
+            height: "158px",
+          }}
         />
         {props.extraPics && (
           <Box
@@ -47,28 +50,34 @@ const CustomCard = (props: any) => {
             </Typography>
           </Box>
         )}
-        <CardContent sx={{ padding: "10px", gap: "10px" }}>
+        <CardContent
+          sx={{ padding: " 10px 10px 6px", gap: "10px", width: "50%" }}
+        >
           <Stack
             direction={"row"}
             sx={{ justifyContent: "space-between", pb: "5px" }}
           >
-            <Typography sx={{ color: COLORS.primary.main, fontSize: "18px" }}>
+            <Typography sx={{ color: COLORS.primary.main, fontSize: "17px" }}>
               {props.name}
             </Typography>
-            <Typography sx={{ color: COLORS.primary.main, fontSize: "18px" }}>
+            <Typography sx={{ color: COLORS.primary.main, fontSize: "17px" }}>
               {props.age}
             </Typography>
           </Stack>
-          <Typography variant="body2" color={COLORS.gray.lightGray}>
+          <Typography variant="body2" color={COLORS.gray.lightGray} pt={"12px"}>
             {props.profession}
+          </Typography>
+          <Typography pt={"7px"} color={COLORS.gray.lightGray}>
+            {props.religon}
           </Typography>
           <Stack
             direction={"row"}
-            sx={{ justifyContent: "space-between", py: "3px" }}
+            sx={{ justifyContent: "space-between", py: "7px" }}
           >
             <Typography variant="body2" color={COLORS.gray.lightGray}>
               {props.location}
             </Typography>
+
             <Box
               component={"img"}
               src={props.countryFlag}
@@ -79,7 +88,7 @@ const CustomCard = (props: any) => {
             <Rating
               value={props.rating}
               size="small"
-              sx={{ color: COLORS.primary.main }}
+              sx={{ color: COLORS.primary.main, pt: "18px" }}
             />
           )}
         </CardContent>
@@ -87,4 +96,4 @@ const CustomCard = (props: any) => {
     </Card>
   );
 };
-export default CustomCard;
+export default OnlineUserCard;

@@ -102,6 +102,7 @@ theme = {
             color: "white",
             "& + .MuiSwitch-track": {
               backgroundColor: "green",
+
               "&:before": {
                 content: '"Live"',
                 position: "absolute",
@@ -131,7 +132,7 @@ theme = {
             width: "100%",
             height: "100%",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "end",
             alignItems: "center",
             fontSize: "12px",
             color: "white",
@@ -166,10 +167,8 @@ theme = {
             boxShadow: "none",
           },
           "&.Mui-disabled": {
-<<<<<<< Updated upstream
-=======
             backgroundColor: COLORS,
->>>>>>> Stashed changes
+
             color: "white",
             opacity: 0.6,
           },

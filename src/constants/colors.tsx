@@ -1,5 +1,3 @@
-
-
 export const COLORS = {
   primary: {
     main: "#a6047f",
@@ -16,7 +14,8 @@ export const COLORS = {
     main: "#f8f8f8",
     darkGray: "#6f6b6b",
     lightGray: "#818181",
-    whiteGray: "#f9f9ff9",
+    whiteGray: "#f9f9f9",
+    lightDarkGray: "#ECECEC",
   },
   dark: {
     darkblack: "##333",
@@ -29,18 +28,18 @@ export const COLORS = {
     darkwhite: "#FAFAFA",
     grayWhite: "#F5F5F5",
   },
-  orange:{
-    main:'#FF9800'
+  orange: {
+    main: "#FF9800",
   },
-  blue:{
-    main:'#4087f1'
+  blue: {
+    main: "#4087f1",
   },
-  purple:{
-    main:'#652e80',
-    dark:'#84315b',
-    light:'#7352af'
+  purple: {
+    main: "#652e80",
+    dark: "#84315b",
+    light: "#7352af",
   },
-  red:{
-    main:'#a60428'
-  }
+  red: {
+    main: "#a60428",
+  },
 };
