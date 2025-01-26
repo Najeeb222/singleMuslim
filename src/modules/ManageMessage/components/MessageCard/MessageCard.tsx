@@ -30,10 +30,7 @@ const MessageCard = () => {
             fontSize={"11px"}
             color={COLORS.gray.darkGray}
           >
-            Salam, How may i help you, Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Ducimus quas commodi, consequuntur quasi iure
-            maiores, repellendus explicabo alias eveniet quod praesentium, nisi
-            iusto. Voluptatum asperiores illum impedit distinctio fugit ad!
+            Salam, How may i help you, 
           </Typography>
         </Stack>
         <Stack
