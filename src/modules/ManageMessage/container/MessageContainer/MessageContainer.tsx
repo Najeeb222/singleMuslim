@@ -3,26 +3,27 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import { Close, MessageOutlined } from "@mui/icons-material";
-import { Box, IconButton, Stack, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Container,
+  IconButton,
+  Stack,
+  Tab,
+  Tabs,
+  Typography,
+} from "@mui/material";
 import { COLORS } from "@muc/constants";
+import MessageCard from "../../components/MessageCard/MessageCard";
 
-const MessageModel = () => {
+const MessageContainer = () => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(0);
 
-  // Handle Dialog open/close
   const handleClickOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // Handle Tab Change
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-
-  const tabContent = [
-    <Typography sx={{ padding: 2 }}>Content for Item One</Typography>,
-    <Typography sx={{ padding: 2 }}>Content for Item Two</Typography>,
-  ];
 
   return (
     <React.Fragment>
@@ -34,7 +35,9 @@ const MessageModel = () => {
         onClick={handleClickOpen}
       >
         <IconButton sx={{ padding: 0, minHeight: "0", height: "33px" }}>
-          <MessageOutlined sx={{ fontSize: "33px",color:COLORS.secondary.main }} />
+          <MessageOutlined
+            sx={{ fontSize: "33px", color: COLORS.secondary.main }}
+          />
         </IconButton>
         <Typography color={COLORS.secondary.main} fontSize={"10px"}>
           Messages
@@ -48,18 +51,18 @@ const MessageModel = () => {
         maxWidth="sm"
         fullWidth
       >
-        <Box sx={{ width: "100%" }}>
+        <Container maxWidth={"md"} sx={{ height: "602px", width: "100%" }}>
           <Tabs
             value={value}
             onChange={handleChange}
             aria-label="Message Dialog Tabs"
             centered
           >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
+            <Tab label="All Messages" />
+            <Tab label="Unread" />
           </Tabs>
-          {tabContent[value]}
-        </Box>
+          {value === 0 && <MessageCard />}
+        </Container>
 
         <DialogActions>
           <Button onClick={handleClose}>
@@ -71,4 +74,4 @@ const MessageModel = () => {
   );
 };
 
-export default MessageModel;
+export default MessageContainer;

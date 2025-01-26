@@ -54,12 +54,7 @@ const LikesContainer = () => {
               />
             ))}
           </Tabs>
-          {value === 0 && (
-            <Box>
-              {<LIkeTab />}
-              value={value}
-            </Box>
-          )}
+          {value === 0 && <Box>{<LIkeTab />}</Box>}
 
           {value === 1 && <Box>{<LikeMeTab />}</Box>}
           {value === 2 && <Box>{<LikeMeTab />}</Box>}

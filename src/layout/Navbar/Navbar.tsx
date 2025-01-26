@@ -9,7 +9,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import { NavLink } from "react-router-dom";
-import { colors, Divider, Stack, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import { COLORS } from "@muc/constants";
 import {
   Favorite,
@@ -17,7 +17,7 @@ import {
   PhotoLibraryOutlined,
   SearchOutlined,
 } from "@mui/icons-material";
-import { MessageModel } from "@muc/components";
+import { MessageContainer } from "@muc/modules";
 const drawerWidth = 320;
 const navItems = [
   {
@@ -155,7 +155,7 @@ export default function Navbar(props: any) {
                     </Stack>
                   </NavLink>
                 ))}
-                <MessageModel />
+                <MessageContainer />
               </Box>
             </Box>
             <IconButton

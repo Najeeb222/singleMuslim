@@ -1,4 +1,4 @@
-import { CustomCard, OnlineUserCard } from "@muc/components";
+import { CustomCard,  } from "@muc/components";
 import { userData } from "@muc/constants";
 import { Stack } from "@mui/material";
 

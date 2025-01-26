@@ -106,7 +106,7 @@ export default function LandingNavbar(props: any) {
                   display: { xs: "none", sm: "flex", alignItems: "center" },
                 }}
               >
-                {navItems.map((item, i) => (
+                {navItems.map((item, ) => (
                   <NavLink
                     to={item.path}
                     key={item.title}

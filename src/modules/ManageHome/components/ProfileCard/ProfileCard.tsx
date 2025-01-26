@@ -1,6 +1,3 @@
-{
-  /* Conditionally render content based on selected tab */
-}
 import { CustomCard } from "@muc/components";
 import { COLORS, userData } from "@muc/constants";
 import { Button, Paper, Stack } from "@mui/material";
@@ -11,9 +8,9 @@ import { useState } from "react";
 import { AvTimer, Language, WhereToVote } from "@mui/icons-material";
 
 const ProfileCard = () => {
-  const [value, setValue] = useState<string>("one");
+  const [value, setValue] = useState<number>(1);
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
@@ -28,30 +25,29 @@ const ProfileCard = () => {
           textColor="secondary"
           indicatorColor="secondary"
           aria-label="secondary tabs example"
-          sx={{
-            justifyContent: "center",
-            bgcolor: "red",
-            display: "flex",
-            alignItems: "center",
-            mx: "auto",
-          }}
+          centered
         >
-          <Tab
-            value="one"
-            label={<Button startIcon={<Language />}>Online</Button>}
-          />
-          <Tab
-            value="two"
-            label={<Button startIcon={<WhereToVote />}>Near ME</Button>}
-          />
-          <Tab
-            value="three"
-            label={<Button startIcon={<AvTimer />}>Latest</Button>}
-          />
+          {TabsLabel.map((item) => (
+            <Tab
+              sx={{ mx: '10px'}}
+              value={item.value}
+              label={
+                <Button
+                  sx={{
+                    color: COLORS.gray.darkGray,
+                    fontSize: "18px",
+                  }}
+                  startIcon={item.icon}
+                >
+                  {item.title}
+                </Button>
+              }
+            />
+          ))}
         </Tabs>
       </Box>
 
-      {value === "one" && (
+      {value === 1 && (
         <Stack
           direction={"row"}
           sx={{
@@ -76,8 +72,8 @@ const ProfileCard = () => {
         </Stack>
       )}
 
-      {value === "two" && <div>Content for Item Two</div>}
-      {value === "three" && <div>Content for Item Three</div>}
+      {value === 2 && <div>Content for Item Two</div>}
+      {value === 3 && <div>Content for Item Three</div>}
       <Button
         sx={{
           display: "flex",
@@ -95,3 +91,21 @@ const ProfileCard = () => {
 };
 
 export default ProfileCard;
+
+const TabsLabel = [
+  {
+    icon: <Language />,
+    title: "Online",
+    value: 1,
+  },
+  {
+    icon: <WhereToVote />,
+    title: "Online",
+    value: 2,
+  },
+  {
+    icon: <AvTimer />,
+    title: "Latest",
+    value: 3,
+  },
+];

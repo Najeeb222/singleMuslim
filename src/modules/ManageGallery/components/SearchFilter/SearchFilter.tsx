@@ -10,7 +10,7 @@ function valuetext(value: number) {
 
 const SearchFilter = () => {
   const [value, setValue] = React.useState<number[]>([18, 29]);
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleChange = (_event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
   };
 

@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import { Footer, Navbar } from "../layout";
-import LandingNavbar from "../LandingNavbar/LandingNavbar";
 
 const AppLayout = ({ children }: any) => {
   return (
