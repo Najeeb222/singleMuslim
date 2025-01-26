@@ -12,8 +12,8 @@ const MessageCard = () => {
           height: "70px",
           padding: "10px",
           justifyContent: "center",
-          gap:'20px',
-          boxShadow:`0 5px 5px  ${COLORS.gray.darkGray}`
+          gap: "20px",
+          boxShadow: `0 5px 5px  ${COLORS.gray.darkGray}`,
         }}
       >
         <Box
@@ -30,7 +30,10 @@ const MessageCard = () => {
             fontSize={"11px"}
             color={COLORS.gray.darkGray}
           >
-            Salam, How may i help you
+            Salam, How may i help you, Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Ducimus quas commodi, consequuntur quasi iure
+            maiores, repellendus explicabo alias eveniet quod praesentium, nisi
+            iusto. Voluptatum asperiores illum impedit distinctio fugit ad!
           </Typography>
         </Stack>
         <Stack
