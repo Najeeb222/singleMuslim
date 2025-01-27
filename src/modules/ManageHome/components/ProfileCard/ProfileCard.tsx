@@ -67,6 +67,7 @@ const ProfileCard = () => {
               img={item.img}
               location={item.location}
               countryFlag={item.countryflag}
+              id={item?.id}
             />
           ))}
         </Stack>

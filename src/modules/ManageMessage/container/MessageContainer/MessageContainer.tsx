@@ -1,10 +1,12 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import { Close, MessageOutlined } from "@mui/icons-material";
 import {
+  Box,
   Container,
+  DialogActions,
+  DialogContent,
+  Divider,
   IconButton,
   Stack,
   Tab,
@@ -13,6 +15,9 @@ import {
 } from "@mui/material";
 import { COLORS } from "@muc/constants";
 import MessageCard from "../../components/MessageCard/MessageCard";
+import ShowUserDetailPath from "../../components/ShowUserDetailPath/ShowUserDetailPath";
+import ChatBox from "../../components/ChatBox/ChatBox";
+import SendingChatTextField from "../../components/SendingChatTextField/SendingChatTextField";
 
 const MessageContainer = () => {
   const [open, setOpen] = React.useState(false);
@@ -48,26 +53,84 @@ const MessageContainer = () => {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        maxWidth="sm"
+        maxWidth="md"
         fullWidth
       >
-        <Container maxWidth={"md"} sx={{ height: "602px", width: "100%" }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="Message Dialog Tabs"
-            centered
-          >
-            <Tab label="All Messages" />
-            <Tab label="Unread" />
-          </Tabs>
-          {value === 0 && <MessageCard />}
+        <Container
+          disableGutters
+          maxWidth={"md"}
+          sx={{ height: "602px", width: "100%" }}
+        >
+          <DialogContent sx={{ display: "flex", padding: 0 }}>
+            <Box sx={{ maxWidth: "300px" }}>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="Message Dialog Tabs"
+                centered
+                sx={{
+                  width: "300px",
+                  pt: "30px",
+                  background:
+                    "linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%)",
+                  ".MuiTabs-indicator": {
+                    top: 0,
+                    bottom: "auto",
+                    color: COLORS.secondary.main,
+                  },
+                }}
+              >
+                <Tab
+                  label="All Messages"
+                  sx={{
+                    border: "1px solid #ccc",
+                    bgcolor: value === 0 ? "white" : "inherit",
+                    width: "140px",
+                    fontSize: "12px",
+                    color: COLORS.secondary.main,
+                    padding: "5px",
+                  }}
+                />
+                <Tab
+                  label="Unread"
+                  sx={{
+                    border: "1px solid #ccc",
+                    bgcolor: value === 1 ? "white" : "inherit",
+                    width: "140px",
+                    fontSize: "12px",
+                    color: COLORS.secondary.main,
+                    padding: "5px",
+                  }}
+                />
+              </Tabs>
+              <Box
+                sx={{
+                  bgcolor: COLORS.gray.whiteGray,
+                  color: COLORS.secondary.main,
+                  padding: "10px",
+                  textAlign: "end",
+                }}
+              >
+                <Typography sx={{ cursor: "pointer" }}>Edit</Typography>
+              </Box>
+              {value === 0 && <MessageCard />}
+            </Box>
+            <Divider
+              orientation="vertical"
+              flexItem
+              sx={{ bgcolor: COLORS.gray.main, height: "602px" }}
+            />
+            <Box width={"688px"}>
+              <ShowUserDetailPath />
+              <ChatBox />
+              <SendingChatTextField />
+            </Box>
+          </DialogContent>
         </Container>
-
-        <DialogActions>
-          <Button onClick={handleClose}>
-            <Close />
-          </Button>
+        <DialogActions sx={{ position: "absolute", top: "0", right: "0" }}>
+          <IconButton onClick={handleClose}>
+            <Close sx={{ color: COLORS.gray.darkGray, fontSize: "20px" }} />
+          </IconButton>
         </DialogActions>
       </Dialog>
     </React.Fragment>

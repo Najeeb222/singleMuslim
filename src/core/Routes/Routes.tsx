@@ -5,6 +5,7 @@ import {
   Likes,
   Loging,
   Search,
+  UserInfo,
 } from "@muc/screens";
 import { Route, Routes as ReactRoutes } from "react-router-dom";
 
@@ -17,6 +18,7 @@ const Routes = () => {
       <Route path={"/likes"} element={<Likes />} />
       <Route path="/landing_screen" element={<LandingScreen />} />
       <Route path="/loging" element={<Loging />} />
+      <Route path="/user_info/:id" element={<UserInfo/>}/>
     </ReactRoutes>
   );
 };

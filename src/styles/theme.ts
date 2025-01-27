@@ -204,45 +204,46 @@ theme = {
           color: COLORS.dark.lightblack,
         },
       },
+      
     },
 
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
-          height: 44,
-          border: `1px solid ${COLORS.gray.lightGray}`,
-          color: COLORS.white.main,
-          background: "transparent",
-          "& fieldset": {
-            padding: "12px 16px",
-          },
-          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            border: `transparent`,
-          },
-          "&.Mui-focused fieldset": {
-            border: `transparent`,
-          },
-          "& input::placeholder": {
-            color: COLORS.gray.lightGray,
-            opacity: 0.4,
-          },
-          "& input:-webkit-autofill": {
-            WebkitBoxShadow: "0 0 0 100px transparent inset",
-            transition: "background-color 5000s ease-in-out 0s",
-          },
-          "& input:-webkit-autofill:focus": {
-            WebkitBoxShadow: "0 0 0 100px transparent inset",
-            borderColor: COLORS.primary.main,
-          },
-          "& input:hover": {
-            border: `transparent`,
-          },
-          "& input:focus": {
-            border: `transparent`,
-          },
-        },
-      },
-    },
+    // MuiOutlinedInput: {
+    //   styleOverrides: {
+    //     root: {
+    //       borderRadius: 8,
+    //       // height: 44,
+    //       border: `1px solid ${COLORS.gray.lightGray}`,
+    //       color: COLORS.white.main,
+    //       background: "transparent",
+    //       "& fieldset": {
+    //         padding: "12px 16px",
+    //       },
+    //       "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    //         border: `transparent`,
+    //       },
+    //       "&.Mui-focused fieldset": {
+    //         border: `transparent`,
+    //       },
+    //       "& input::placeholder": {
+    //         color: COLORS.gray.lightGray,
+    //         opacity: 0.4,
+    //       },
+    //       "& input:-webkit-autofill": {
+    //         WebkitBoxShadow: "0 0 0 100px transparent inset",
+    //         transition: "background-color 5000s ease-in-out 0s",
+    //       },
+    //       "& input:-webkit-autofill:focus": {
+    //         WebkitBoxShadow: "0 0 0 100px transparent inset",
+    //         borderColor: COLORS.primary.main,
+    //       },
+    //       "& input:hover": {
+    //         border: `transparent`,
+    //       },
+    //       "& input:focus": {
+    //         border: `transparent`,
+    //       },
+    //     },
+    //   },
+    // },
   },
 };

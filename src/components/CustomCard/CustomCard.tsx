@@ -5,8 +5,11 @@ import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import { COLORS } from "@muc/constants";
 import { Box, Rating, Stack } from "@mui/material";
+import { useNavigate } from "react-router";
 
 const CustomCard = (props: any) => {
+  const navigate=useNavigate()
+
   return (
     <Card
       sx={{
@@ -15,7 +18,9 @@ const CustomCard = (props: any) => {
           scale: "1.1",
           transition: "all ease 0.5s",
         },
+        cursor:"pointer"
       }}
+      onClick={()=>navigate(`/user_info/${props?.id}`)}
     >
       <CardActionArea>
         <CardMedia

@@ -9,6 +9,7 @@ export const COLORS = {
   green: {
     main: "#3ea877",
     lightGreen: "#8eaf52",
+    darkGreen: "#1DB309",
   },
   gray: {
     main: "#f8f8f8",
@@ -18,7 +19,7 @@ export const COLORS = {
     lightDarkGray: "#ECECEC",
   },
   dark: {
-    darkblack: "##333",
+    darkblack: "#333",
     main: "#000",
     lightblack: "#212121",
     grayblack: "#555555",
@@ -33,6 +34,7 @@ export const COLORS = {
   },
   blue: {
     main: "#4087f1",
+    bluelight: "#337ab7",
   },
   purple: {
     main: "#652e80",
