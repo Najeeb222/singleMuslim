@@ -1,6 +1,5 @@
 import { AppLayout } from "@muc/layout";
 import SearchFilter from "../../components/SearchFilter/SearchFilter";
-import { RecomendedForYou } from "../../components/RecomendedForYou/RecomendedForYou";
 import GalleryCard from "../../components/GalleryCard/GalleryCard";
 import { Box, Container } from "@mui/material";
 import { COLORS } from "@muc/constants";
