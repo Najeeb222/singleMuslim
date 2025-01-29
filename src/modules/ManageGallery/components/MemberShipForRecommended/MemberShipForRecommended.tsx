@@ -4,11 +4,10 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import { Box, Stack, Typography } from "@mui/material";
 import { RecomendedForYou } from "../RecomendedForYou/RecomendedForYou";
 import { COLORS } from "@muc/constants";
-import { Close, Star, StarBorder } from "@mui/icons-material";
+import { Close, StarBorder } from "@mui/icons-material";
 
 const MemberShipForRecommended = () => {
   const [open, setOpen] = React.useState(false);
