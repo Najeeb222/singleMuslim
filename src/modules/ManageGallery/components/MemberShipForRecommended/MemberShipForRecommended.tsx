@@ -34,8 +34,8 @@ const MemberShipForRecommended = () => {
         <Box
           sx={{
             bgcolor: "#02908e",
-            width: "471px",
-            height: "612px",
+            // width: "471px",
+            // height: "612px",
             padding: "10px",
           }}
         >
@@ -44,27 +44,49 @@ const MemberShipForRecommended = () => {
           </Box>
           <DialogContent sx={{ padding: " 10px 10px" }}>
             <DialogContentText id="alert-dialog-description">
-              <Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
+                }}
+              >
                 <StarBorder
                   sx={{
-                    fontSize: "55px",
+                    fontSize: "60px",
                     color: COLORS.white.main,
                     padding: "8px",
+                    textAlign: "center",
                   }}
                 />
                 <Box>
-                  <Typography>
-                    19 <span>Recommended Matches </span>
-                    <span> selected daily for you and access to all </span>
-                    <span>premium</span>
+                  <Typography
+                    sx={{
+                      color: COLORS.white.main,
+                      fontSize: "20px",
+                      textAlign: "center",
+                    }}
+                  >
+                    19{" "}
+                    <span style={{ fontWeight: 600, lineHeight: "24px" }}>
+                      Recommended <br />
+                      Matches{" "}
+                    </span>
+                    <span>
+                      {" "}
+                      selected daily for <br /> you and access to all{" "}
+                    </span>
+                    <br />
+                    <span style={{ fontWeight: 600 }}>premium</span>
                   </Typography>
                 </Box>
               </Box>
               <Stack
                 sx={{
+                  mt: 1,
                   color: COLORS.white.main,
                   justifyContent: "space-between",
-                  height: "240px",
+                  height: "210px",
                   alignItems: "center",
                   padding: "8px",
                 }}

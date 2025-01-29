@@ -9,7 +9,9 @@ export const RecomendedForYou = () => {
         direction={"row"}
         component={Paper}
         elevation={3}
+        
         sx={{
+          cursor:'pointer',
           justifyContent: "space-between",
           padding: "16px",
           width: "620px",

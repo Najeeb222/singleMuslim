@@ -16,7 +16,6 @@ const GalleryContainer = () => {
         >
           <SearchFilter />
           <MemberShipForRecommended />
-          {/* <RecomendedForYou /> */}
           <GalleryCard />
           <Box sx={{ height: 400, width: "500px" }}></Box>
         </Container>
