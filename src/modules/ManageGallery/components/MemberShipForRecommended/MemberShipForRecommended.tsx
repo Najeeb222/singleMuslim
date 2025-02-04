@@ -8,8 +8,10 @@ import { Box, Stack, Typography } from "@mui/material";
 import { RecomendedForYou } from "../RecomendedForYou/RecomendedForYou";
 import { COLORS } from "@muc/constants";
 import { Close, StarBorder } from "@mui/icons-material";
+import { useNavigate } from "react-router";
 
 const MemberShipForRecommended = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -109,7 +111,7 @@ const MemberShipForRecommended = () => {
               Maybe later
             </Button>
             <Button
-              onClick={handleClose}
+              onClick={() => navigate("/membership_pakages")}
               autoFocus
               sx={{
                 bgcolor: COLORS.white.main,

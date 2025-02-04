@@ -6,9 +6,11 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { useState } from "react";
 import { AvTimer, Language, WhereToVote } from "@mui/icons-material";
+import { useNavigate } from "react-router";
 
 const ProfileCard = () => {
   const [value, setValue] = useState<number>(1);
+  const Navigate = useNavigate();
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -29,7 +31,7 @@ const ProfileCard = () => {
         >
           {TabsLabel.map((item) => (
             <Tab
-              sx={{ mx: '10px'}}
+              sx={{ mx: "10px" }}
               value={item.value}
               label={
                 <Button
@@ -76,6 +78,7 @@ const ProfileCard = () => {
       {value === 2 && <div>Content for Item Two</div>}
       {value === 3 && <div>Content for Item Three</div>}
       <Button
+        onClick={() => Navigate("/gallery")}
         sx={{
           display: "flex",
           alignItems: "center",

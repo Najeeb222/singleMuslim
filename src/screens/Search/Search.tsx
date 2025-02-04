@@ -1,14 +1,11 @@
-import { SearchContainer } from "@muc/modules"
+import { SearchContainer } from "@muc/modules";
 
-
-
-const About = () => {
+const Search = () => {
   return (
-    <div>
-      <SearchContainer/>
-      
-    </div>
-  )
-}
+    <>
+      <SearchContainer />
+    </>
+  );
+};
 
-export default About
+export default Search;
