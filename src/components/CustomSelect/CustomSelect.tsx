@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Select,
-  MenuItem,
-  InputLabel,
-  Box,
-  Typography,
-  Stack,
-} from "@mui/material";
+import { Select, MenuItem, Box, Typography, Stack } from "@mui/material";
 import { useFormContext, useController } from "react-hook-form";
 import { COLORS } from "@muc/constants";
 
@@ -71,7 +64,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       (option) => option.value === selectedValue
     );
     if (onChange && selectedOption) {
-      onChange(selectedOption.id || selectedValue);
+      onChange(selectedValue);
     }
   };
 
