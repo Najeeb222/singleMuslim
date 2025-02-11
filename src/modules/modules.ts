@@ -7,3 +7,7 @@ export * from "./Loging/container/container";
 export * from "./ManageMessage/container/container";
 export * from "./ManageUserInfo/container/container";
 export * from "./MemberShipPakages/container/container";
+export * from "./UserSetting/container/container";
+export * from "./ContactUs/container/container";
+export * from "./TermAndConditaions/container/container";
+export * from "./PrivacyAndSecurity/container/container";

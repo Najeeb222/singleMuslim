@@ -15,8 +15,10 @@ import {
   Switch,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router";
 
 const UserProfile = () => {
+  const Navigate = useNavigate();
   return (
     <>
       <Box
@@ -83,7 +85,9 @@ const UserProfile = () => {
         <Stack direction={"row"} justifyContent={"space-around"}>
           {UserData.map((item) => (
             <Stack sx={{ alignItems: "center", justifyContent: "center" }}>
-              <IconButton>{item.icon}</IconButton>
+              <IconButton onClick={() => Navigate(item.path)}>
+                {item.icon}
+              </IconButton>
               <Typography fontSize={"10px"}>{item.title}</Typography>
             </Stack>
           ))}
@@ -101,16 +105,19 @@ const UserData = [
       <AccountBox sx={{ color: COLORS.secondary.main, fontSize: "32px" }} />
     ),
     title: "Edit profile",
+    path: "/user_setting/edit-profile",
   },
   {
     icon: (
       <PhotoAlbum sx={{ color: COLORS.secondary.main, fontSize: "32px" }} />
     ),
     title: "My Photos",
+    path: "/user_setting/edit-profile",
   },
   {
     icon: <Settings sx={{ color: COLORS.secondary.main, fontSize: "32px" }} />,
     title: "Preferences",
+    path: "/user_setting/preferences",
   },
   {
     icon: (
@@ -119,5 +126,6 @@ const UserData = [
       />
     ),
     title: "Notifications",
+    path: "/user_setting/notifications",
   },
 ];

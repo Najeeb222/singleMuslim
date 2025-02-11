@@ -10,10 +10,12 @@ import {
 import { Box, ButtonGroup, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 const Religion = () => {
   const [active, setActive] = useState<number | null>(0);
   const [activeTwo, setActiveTwo] = useState<number | null>(0);
+  const Navigate = useNavigate();
   const handleActiveTwo = (i: number) => {
     setActiveTwo(i);
   };
@@ -131,6 +133,7 @@ const Religion = () => {
             variant="contained"
             background="#5cb85c"
             color={COLORS.white.main}
+            onClick={() => Navigate("/search/search_result ")}
           />
         </Box>
       </FormProvider>

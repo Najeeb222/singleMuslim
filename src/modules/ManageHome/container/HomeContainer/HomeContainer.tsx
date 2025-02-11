@@ -6,13 +6,14 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { CustomDetailCard } from "@muc/components";
 import { COLORS, privacyData, settingData } from "@muc/constants";
 import {
- 
   PlayCircleFilledWhiteOutlined,
   QuestionAnswer,
   SmsOutlined,
 } from "@mui/icons-material";
+import { useNavigate } from "react-router";
 
 const HomeContainer = () => {
+  const Navigate = useNavigate();
   return (
     <AppLayout>
       <Box sx={{ bgcolor: COLORS.gray.main }}>
@@ -36,6 +37,7 @@ const HomeContainer = () => {
                     textColor="white"
                     icon={item.icon}
                     iconStyles={item.iconStyles}
+                    OnClick={() => { if (item.path) Navigate(item.path); }}
                   />
                 ))}
               </Stack>
@@ -130,6 +132,7 @@ const HomeContainer = () => {
                     iconStyles={item.iconStyles}
                     backgroundColor={item.backgroundColor}
                     textColor={item.textColor}
+                    OnClick={() => { if (item.path) Navigate(item.path); }}
                   />
                 ))}
               </Stack>

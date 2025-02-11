@@ -5,8 +5,19 @@ import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import { COLORS } from "@muc/constants";
 import { Box, Rating, Stack } from "@mui/material";
+interface OnlineUserCardProps {
+  img: string;
+  extraPics?: string;
+  name: string;
+  age: number;
+  profession: string;
+  religon?: string;
+  location?: string;
+  countryFlag?: string;
+  rating?: number;
+}
 
-const OnlineUserCard = (props: any) => {
+const OnlineUserCard = (props: OnlineUserCardProps) => {
   return (
     <Card
       sx={{
@@ -84,7 +95,7 @@ const OnlineUserCard = (props: any) => {
               sx={{ width: "20px", height: "14px" }}
             />
           </Stack>
-          {props.ratting && (
+          {props.rating && (
             <Rating
               value={props.rating}
               size="small"

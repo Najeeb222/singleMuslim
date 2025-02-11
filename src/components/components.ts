@@ -11,3 +11,5 @@ export { default as CustomTextField } from "./CustomTextField/CustomTextField";
 export { default as CustomSelect } from "./CustomSelect/CustomSelect";
 export { default as CustomButton } from "./CustomButton/CustomButton";
 export { default as CustomTableContent } from "./CustomTableContent/CustomTableContent";
+export { default as CustomSwithButton } from "./CustomSwithButton/CustomSwithButton";
+export { default as CustomUploadImg } from "./CustomUploadImg/CustomUploadImg";

@@ -6,3 +6,7 @@ export { default as LandingScreen } from "./LandingScreen/LandingScreen";
 export { default as Loging } from "./Loging/Loging";
 export { default as UserInfo } from "./UserInfo/UserInfo";
 export { default as MemberShipPakages } from "./MemberShipPakages/MemberShipPakages";
+export { default as UserSetting } from "./UserSetting/UserSetting";
+export { default as ContactUs } from "./ContactUs/ContactUs";
+export {default as TermAndConditionsPage} from "./TermAndConditions/TermAndConditions";
+export {default as Privacy} from "./Privacy/Privacy";

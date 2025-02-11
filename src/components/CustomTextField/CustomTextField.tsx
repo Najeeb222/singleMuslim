@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Box,
   IconButton,
   InputAdornment,
   InputLabel,
@@ -10,11 +9,11 @@ import {
 } from "@mui/material";
 import { Controller, RegisterOptions, useFormContext } from "react-hook-form";
 import { COLORS } from "@muc/constants";
-import { CloseRounded, Info, VisibilityOff } from "@mui/icons-material";
+import { CloseRounded, Info, Visibility, VisibilityOff } from "@mui/icons-material";
 
 interface CustomTextFieldProps {
   name: string;
-  label: string;
+  label?: string;
   rules?: RegisterOptions;
   type: string;
   placeholder?: string;
@@ -83,40 +82,42 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
       width={{ md: width, sm: width, xs: "100%" }}
       gap={"16px"}
     >
-      <Typography
-        component={InputLabel}
-        variant="h6"
-        sx={{
-          width: "185px",
-          textAlign: "end",
-          justifyContent: "end",
-          pb: 1,
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          color: COLORS.gray.darkGray,
-          fontSize: "16px",
-        }}
-      >
-        {label} :
-        {isSteric && (
-          <Typography component={"span"} color={COLORS?.red.main}>
-            {formState?.errors["currentPassword"] && (
-              <CloseRounded
-                sx={{
-                  bgcolor: COLORS?.red.main,
-                  color: "white",
-                  width: 13,
-                  height: 13,
-                  borderRadius: "50%",
-                  mr: 0.5,
-                }}
-              />
-            )}
-            *
-          </Typography>
-        )}
-      </Typography>
+      {label && (
+        <Typography
+          component={InputLabel}
+          variant="h6"
+          sx={{
+            minWidth: "185px",
+            textAlign: "end",
+            justifyContent: "end",
+            pb: 1,
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            color: COLORS.gray.darkGray,
+            fontSize: "16px",
+          }}
+        >
+          {label}
+          {isSteric && (
+            <Typography component={"span"} color={COLORS?.red.main}>
+              {formState?.errors[name] && (
+                <CloseRounded
+                  sx={{
+                    bgcolor: COLORS?.red.main,
+                    color: "white",
+                    width: 13,
+                    height: 13,
+                    borderRadius: "50%",
+                    mr: 0.5,
+                  }}
+                />
+              )}
+              *
+            </Typography>
+          )}
+        </Typography>
+      )}
       <Controller
         name={name}
         defaultValue={defaultValue}
@@ -124,14 +125,23 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
         rules={rules}
         render={({ field, fieldState }) => (
           <TextField
+            sx={{
+              minHeight: 34,
+              "& .MuiOutlinedInput-root": {
+                paddingRight: "12px", // Ensure space for visibility icon
+              },
+              "& .MuiOutlinedInput-input": {
+                padding: "6px 12px",
+              },
+            }}
             variant="outlined"
             {...field}
             placeholder={placeholder}
             {...props}
             defaultValue={defaultValue || ""}
             multiline={multiline}
-            fullWidth
             error={!!fieldState.error}
+            fullWidth
             helperText={
               showHelperText && fieldState.error?.message ? (
                 <Typography
@@ -172,19 +182,23 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
                     edge="end"
+                    sx={{
+                      padding: "4px", // Reduce padding to keep icon inside
+                      fontSize: "18px",
+                    }}
                   >
                     {showPassword ? (
                       <VisibilityOff
                         sx={{
                           color: COLORS.gray.lightGray,
+                          fontSize: "20px",
                         }}
                       />
                     ) : (
-                      <Box
-                        component={"img"}
-                        src="/assets/icons/Eye_icon.svg"
+                      <Visibility
                         sx={{
                           color: COLORS.gray.lightGray,
+                          fontSize: "20px",
                         }}
                       />
                     )}

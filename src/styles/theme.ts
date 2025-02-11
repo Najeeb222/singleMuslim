@@ -179,10 +179,15 @@ theme = {
           backgroundColor: "transparent",
           boxShadow: "none",
           height: "56px",
+          minHeight: "34px",
+          padding: 0,
           "&:hover": {
             border: `1px solid ${COLORS.gray.main}`,
             backgroundColor: `transparent`,
             boxShadow: "none",
+          },
+          "& .MuiOutlinedInput-root": {
+            Padding: 0,
           },
           "&.Mui-disabled": {
             borderColor: COLORS.gray.main,
@@ -204,7 +209,6 @@ theme = {
           color: COLORS.dark.lightblack,
         },
       },
-      
     },
 
     // MuiOutlinedInput: {

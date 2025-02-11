@@ -1,9 +1,9 @@
-import { SearchContainer } from "@muc/modules";
+import { Outlet } from "react-router";
 
 const Search = () => {
   return (
     <>
-      <SearchContainer />
+      <Outlet />
     </>
   );
 };

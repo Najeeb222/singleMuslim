@@ -133,8 +133,10 @@ export const settingData = [
     backgroundColor: COLORS.purple.dark,
     textColor: COLORS.white.main,
     iconStyles: { fontSize: "60px", color: COLORS.purple.dark },
+    path: "/contact_us",
   },
 ];
+
 export const privacyData = [
   {
     title: "Success Stories",
@@ -156,6 +158,7 @@ export const privacyData = [
     backgroundColor: "transparent",
     textColor: COLORS.primary.main,
     iconStyles: { fontSize: "60px", color: COLORS.primary.main },
+    path: "/term_and_conditions",
   },
   {
     title: "Privacy and Security",
@@ -163,6 +166,7 @@ export const privacyData = [
     backgroundColor: "transparent",
     textColor: COLORS.secondary.main,
     iconStyles: { fontSize: "60px", color: COLORS.secondary.main },
+    path: "/Privacy_and_Security",
   },
 ];
 
@@ -2799,7 +2803,7 @@ export const HasChilldren = [
   "I have three",
   "I have more than three",
 ];
-export const Build = [
+export const BuildOptions = [
   "Petite",
   "Slim",
   "Athletic",
@@ -2840,7 +2844,7 @@ export const LivingArrangements = [
   "I live with family",
   "Other",
 ];
-export const Height = [
+export const HeightOptions = [
   "4'10\"",
   "4'11\"",
   "5'0\"",
@@ -2891,3 +2895,276 @@ export const FilterResult = [
 ];
 
 export const WantsChildren = ["Yes", "No", "Unsure"];
+export const pakistanStates = [
+  "Azad Jammu and Kashmir",
+  "Balochistan",
+  "Federally Administered Tribal Areas (FATA)",
+  "Gilgit-Baltistan",
+  "Khyber Pakhtunkhwa",
+  "Punjab",
+  "Sindh",
+];
+export const dateOfBirth = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 24, 25, 26, 27, 28, 29, 30, 31,
+];
+export const monthsOfBirth = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+export const yearsOfBirth = [
+  1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962,
+  1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975,
+  1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988,
+  1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001,
+  2002, 2003, 2004, 2005, 2006, 2007,
+];
+export const newMessages = [
+  "Everytime i receive a new message",
+  "Once a day",
+  "Once a week",
+  "Once a month",
+  "Never",
+];
+export const contactData = {
+  title: "Contact Us",
+  sections: [
+    {
+      title: "Telephone Support",
+      content: [
+        {
+          text: "To speak to a member of our team about your profile, or to upgrade your membership, please contact us using one of the numbers below.",
+        },
+        { label: "WhatsApp", text: "+44 7 747 697 630" },
+        { label: "Pakistan Customers WhatsApp", text: "+92 310 902 9561" },
+        {
+          label: "Telephone",
+          text: "+44 (0)208 125 3825 (Monday - Friday, 9am - 5pm GMT)",
+        },
+        {
+          text: "Calls are charged at local rate. Charges from mobile and other network providers may vary.",
+        },
+      ],
+    },
+    {
+      title: "Email",
+      content: [
+        {
+          text: "If you are already registered on Single Muslim, please ensure you send the email from the email address that is registered to your profile and mention your profile username in your message.",
+        },
+        {
+          label: "Customer Care",
+          text: "customercare@singlemuslim.com",
+          link: "mailto:customercare@singlemuslim.com",
+        },
+        {
+          label: "Pakistan Customer Care",
+          text: "pk@singlemuslim.com",
+          link: "mailto:pk@singlemuslim.com",
+        },
+        {
+          label: "Technical Support",
+          text: "support@singlemuslim.com",
+          link: "mailto:support@singlemuslim.com",
+        },
+        {
+          label: "Bug Reports",
+          text: "Please click here to report a bug",
+          link: "#",
+        },
+        {
+          label: "Success Stories",
+          text: "success@singlemuslim.com",
+          link: "mailto:success@singlemuslim.com",
+        },
+        {
+          label: "Press Enquiries",
+          text: "pr@singlemuslim.com",
+          link: "mailto:pr@singlemuslim.com",
+        },
+      ],
+    },
+    {
+      title: "Postal Address",
+      content: [
+        {
+          text: "Single Muslim, PO Box 386, Wakefield, West Yorkshire, WF2 9WA, United Kingdom",
+        },
+        {
+          text: "Single Muslim Matrimonial services (Pvt Ltd), c/o Kallem Ahmed near Chaudhary house, BaniGala, Islamabad, Pakistan.",
+        },
+      ],
+    },
+  ],
+};
+
+export const termAndConditionsData = {
+  title: "Terms and Conditions",
+  sections: [
+    {
+      title: "Introduction",
+      content: [
+        "Welcome to SingleMuslim.com. By accessing our website, you agree to abide by these terms and conditions.",
+        "These terms outline the rules and regulations for the use of our services.",
+      ],
+    },
+    {
+      title: "Eligibility",
+      content: [
+        "You must be at least 18 years old to register and use our services.",
+        "By using this website, you confirm that all the information you provide is accurate.",
+      ],
+    },
+    {
+      title: "User Responsibilities",
+      content: [
+        "Users are responsible for maintaining the confidentiality of their account credentials.",
+        "Any misuse of the platform, including fraudulent activities, will result in account suspension.",
+      ],
+    },
+    {
+      title: "Privacy Policy",
+      content: [
+        "We are committed to protecting your privacy. Please refer to our Privacy Policy for more details.",
+        "Your data is stored securely and will not be shared without your consent.",
+      ],
+    },
+    {
+      title: "Termination",
+      content: [
+        "We reserve the right to terminate your account if you violate any of our terms and conditions.",
+        "Users may also request account deletion at any time by contacting our support team.",
+      ],
+    },
+  ],
+};
+export const privacyAndSecurityData = {
+  title: "Privacy and Security",
+  sections: [
+    {
+      title: "Our Commitment to You",
+      content: [
+        "We design all of our products and services with your privacy in mind. We involve experts from various fields, including legal, security, engineering, product design, and others to make sure that no decision is taken without respect for your privacy.",
+        "We work hard to keep your data secure. We have teams dedicated to keeping your data safe and secure. We constantly update our security practices and invest in security efforts to enhance the safety of your data.",
+      ],
+    },
+    {
+      title: "Privacy Policy",
+      content: [
+        "We appreciate that you trust us with your data and we intend to always keep that trust. This starts with making sure you understand the data that we collect, why we collect it, how it is used, and your choices regarding your data. This Policy describes our privacy practices in plain language, keeping legal and technical jargon to a minimum.",
+      ],
+    },
+    {
+      title: "Who We Are",
+      content: [
+        "Single Muslim Limited (Trading as SingleMuslim.com)",
+        "PO BOX 386",
+        "WAKEFIELD",
+        "WF2 9WA",
+      ],
+    },
+    {
+      title: "Data We Collect",
+      content: [
+        "We can’t help you develop meaningful connections without some data about you, such as basic profile details and the types of people you’d like to meet. We also collect data generated as you use our services, for example, access logs.",
+        "Data you give us includes information provided when creating an account, completing your profile, subscribing to a paid service, participating in surveys or focus groups, and contacting our customer care team.",
+        "Data we receive from others includes information from other users, social media platforms, and other partners.",
+      ],
+    },
+  ],
+};
+export const countriesWithFlags = [
+  { name: "Afghanistan", flag: "https://flagcdn.com/w320/af.png" },
+  { name: "Albania", flag: "https://flagcdn.com/w320/al.png" },
+  { name: "Algeria", flag: "https://flagcdn.com/w320/dz.png" },
+  { name: "Andorra", flag: "https://flagcdn.com/w320/ad.png" },
+  { name: "Angola", flag: "https://flagcdn.com/w320/ao.png" },
+  { name: "Argentina", flag: "https://flagcdn.com/w320/ar.png" },
+  { name: "Armenia", flag: "https://flagcdn.com/w320/am.png" },
+  { name: "Australia", flag: "https://flagcdn.com/w320/au.png" },
+  { name: "Austria", flag: "https://flagcdn.com/w320/at.png" },
+  { name: "Azerbaijan", flag: "https://flagcdn.com/w320/az.png" },
+  { name: "Bahamas", flag: "https://flagcdn.com/w320/bs.png" },
+  { name: "Bahrain", flag: "https://flagcdn.com/w320/bh.png" },
+  { name: "Bangladesh", flag: "https://flagcdn.com/w320/bd.png" },
+  { name: "Belarus", flag: "https://flagcdn.com/w320/by.png" },
+  { name: "Belgium", flag: "https://flagcdn.com/w320/be.png" },
+  { name: "Belize", flag: "https://flagcdn.com/w320/bz.png" },
+  { name: "Benin", flag: "https://flagcdn.com/w320/bj.png" },
+  { name: "Bhutan", flag: "https://flagcdn.com/w320/bt.png" },
+  { name: "Bolivia", flag: "https://flagcdn.com/w320/bo.png" },
+  { name: "Bosnia and Herzegovina", flag: "https://flagcdn.com/w320/ba.png" },
+  { name: "Botswana", flag: "https://flagcdn.com/w320/bw.png" },
+  { name: "Brazil", flag: "https://flagcdn.com/w320/br.png" },
+  { name: "Brunei", flag: "https://flagcdn.com/w320/bn.png" },
+  { name: "Bulgaria", flag: "https://flagcdn.com/w320/bg.png" },
+  { name: "Burkina Faso", flag: "https://flagcdn.com/w320/bf.png" },
+  { name: "Burundi", flag: "https://flagcdn.com/w320/bi.png" },
+  { name: "Cambodia", flag: "https://flagcdn.com/w320/kh.png" },
+  { name: "Cameroon", flag: "https://flagcdn.com/w320/cm.png" },
+  { name: "Canada", flag: "https://flagcdn.com/w320/ca.png" },
+  { name: "Chile", flag: "https://flagcdn.com/w320/cl.png" },
+  { name: "China", flag: "https://flagcdn.com/w320/cn.png" },
+  { name: "Colombia", flag: "https://flagcdn.com/w320/co.png" },
+  { name: "Congo", flag: "https://flagcdn.com/w320/cg.png" },
+  { name: "Costa Rica", flag: "https://flagcdn.com/w320/cr.png" },
+  { name: "Croatia", flag: "https://flagcdn.com/w320/hr.png" },
+  { name: "Cuba", flag: "https://flagcdn.com/w320/cu.png" },
+  { name: "Cyprus", flag: "https://flagcdn.com/w320/cy.png" },
+  { name: "Czech Republic", flag: "https://flagcdn.com/w320/cz.png" },
+  { name: "Denmark", flag: "https://flagcdn.com/w320/dk.png" },
+  { name: "Djibouti", flag: "https://flagcdn.com/w320/dj.png" },
+  { name: "Dominica", flag: "https://flagcdn.com/w320/dm.png" },
+  { name: "Dominican Republic", flag: "https://flagcdn.com/w320/do.png" },
+  { name: "Ecuador", flag: "https://flagcdn.com/w320/ec.png" },
+  { name: "Egypt", flag: "https://flagcdn.com/w320/eg.png" },
+  { name: "El Salvador", flag: "https://flagcdn.com/w320/sv.png" },
+  { name: "Estonia", flag: "https://flagcdn.com/w320/ee.png" },
+  { name: "Ethiopia", flag: "https://flagcdn.com/w320/et.png" },
+  { name: "Fiji", flag: "https://flagcdn.com/w320/fj.png" },
+  { name: "Finland", flag: "https://flagcdn.com/w320/fi.png" },
+  { name: "France", flag: "https://flagcdn.com/w320/fr.png" },
+  { name: "Germany", flag: "https://flagcdn.com/w320/de.png" },
+  { name: "Ghana", flag: "https://flagcdn.com/w320/gh.png" },
+  { name: "Greece", flag: "https://flagcdn.com/w320/gr.png" },
+  { name: "Hungary", flag: "https://flagcdn.com/w320/hu.png" },
+  { name: "Iceland", flag: "https://flagcdn.com/w320/is.png" },
+  { name: "India", flag: "https://flagcdn.com/w320/in.png" },
+  { name: "Indonesia", flag: "https://flagcdn.com/w320/id.png" },
+  { name: "Iran", flag: "https://flagcdn.com/w320/ir.png" },
+  { name: "Iraq", flag: "https://flagcdn.com/w320/iq.png" },
+  { name: "Ireland", flag: "https://flagcdn.com/w320/ie.png" },
+  { name: "Italy", flag: "https://flagcdn.com/w320/it.png" },
+  { name: "Japan", flag: "https://flagcdn.com/w320/jp.png" },
+  { name: "Jordan", flag: "https://flagcdn.com/w320/jo.png" },
+  { name: "Kazakhstan", flag: "https://flagcdn.com/w320/kz.png" },
+  { name: "Kenya", flag: "https://flagcdn.com/w320/ke.png" },
+  { name: "Kuwait", flag: "https://flagcdn.com/w320/kw.png" },
+  { name: "Lebanon", flag: "https://flagcdn.com/w320/lb.png" },
+  { name: "Libya", flag: "https://flagcdn.com/w320/ly.png" },
+  { name: "Malaysia", flag: "https://flagcdn.com/w320/my.png" },
+  { name: "Mexico", flag: "https://flagcdn.com/w320/mx.png" },
+  { name: "Netherlands", flag: "https://flagcdn.com/w320/nl.png" },
+  { name: "New Zealand", flag: "https://flagcdn.com/w320/nz.png" },
+  { name: "Nigeria", flag: "https://flagcdn.com/w320/ng.png" },
+  { name: "Pakistan", flag: "https://flagcdn.com/w320/pk.png" },
+  { name: "Philippines", flag: "https://flagcdn.com/w320/ph.png" },
+  { name: "Qatar", flag: "https://flagcdn.com/w320/qa.png" },
+  { name: "Russia", flag: "https://flagcdn.com/w320/ru.png" },
+  { name: "Saudi Arabia", flag: "https://flagcdn.com/w320/sa.png" },
+  { name: "South Africa", flag: "https://flagcdn.com/w320/za.png" },
+  { name: "Spain", flag: "https://flagcdn.com/w320/es.png" },
+  { name: "Turkey", flag: "https://flagcdn.com/w320/tr.png" },
+  { name: "United Kingdom", flag: "https://flagcdn.com/w320/gb.png" },
+  { name: "United States", flag: "https://flagcdn.com/w320/us.png" },
+];

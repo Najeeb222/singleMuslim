@@ -95,11 +95,13 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             display: "flex",
             gap: "10px",
             width: "185px",
+            maxWidth: "266px",
             justifyContent: "end",
             alignItems: "center",
+            whiteSpace: "nowrap",
           }}
         >
-          {label}:
+          {label}
         </Typography>
       )}
 
@@ -123,6 +125,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         displayEmpty
         disabled={disabled}
         open={isOpen}
+        fullWidth
         onOpen={() => setIsOpen(true)}
         onClose={() => setIsOpen(false)}
         renderValue={(selected) => {

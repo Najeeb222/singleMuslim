@@ -1,13 +1,13 @@
 import { CustomButton, CustomSelect } from "@muc/components";
 import {
-  Build,
+  BuildOptions,
   COLORS,
   Countries,
   Disabilities,
   EyeColors,
   HairColors,
   HasChilldren,
-  Height,
+  HeightOptions,
   LivingArrangements,
   LookingToMarry,
   MaritalStatus,
@@ -121,7 +121,7 @@ const Personal = () => {
           name="Build"
           label="Build"
           labelOutside={true}
-          options={Build.map((item) => ({
+          options={BuildOptions.map((item) => ({
             label: item,
             value: item,
           }))}
@@ -157,7 +157,7 @@ const Personal = () => {
           name="Minimum Height"
           label="Minimum Height"
           labelOutside={true}
-          options={Height.map((item) => ({
+          options={HeightOptions.map((item) => ({
             label: item,
             value: item,
           }))}
@@ -166,7 +166,7 @@ const Personal = () => {
           name="Maximum Height"
           label="Maximum Height"
           labelOutside={true}
-          options={Height.map((item) => ({
+          options={HeightOptions.map((item) => ({
             label: item,
             value: item,
           }))}
