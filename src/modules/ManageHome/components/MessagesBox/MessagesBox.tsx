@@ -4,7 +4,14 @@ import { Box, Paper, Stack, Typography } from "@mui/material";
 const MessagesBox = () => {
   return (
     <>
-      <Box component={Paper} sx={{ width: "100%", mb: "30px" ,height:'380px' }}>
+      <Box
+        component={Paper}
+        sx={{
+          width:'100%',
+          mb: "21px",
+          maxheight: '380px',
+        }}
+      >
         <Paper>
           <Typography variant="h4" sx={{ padding: "16px" }}>
             Messages
@@ -19,7 +26,7 @@ const MessagesBox = () => {
               overflowY: "auto",
             }}
           >
-            <Typography sx={{ fontSize: "28px" }}>
+            <Typography sx={{ fontSize: { md: "28px", xs: "20px" } }}>
               You have no messages.
             </Typography>
           </Stack>

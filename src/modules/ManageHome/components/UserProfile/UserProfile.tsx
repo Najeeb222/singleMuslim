@@ -23,7 +23,7 @@ const UserProfile = () => {
     <>
       <Box
         component={Paper}
-        width={"380px"}
+        width={'100%'}
         sx={{ padding: "21px 0", height: "385px", mb: "10px" }}
       >
         <Stack

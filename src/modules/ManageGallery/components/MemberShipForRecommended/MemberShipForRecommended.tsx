@@ -36,8 +36,7 @@ const MemberShipForRecommended = () => {
         <Box
           sx={{
             bgcolor: "#02908e",
-            // width: "471px",
-            // height: "612px",
+
             padding: "10px",
           }}
         >
@@ -65,7 +64,7 @@ const MemberShipForRecommended = () => {
                   <Typography
                     sx={{
                       color: COLORS.white.main,
-                      fontSize: "20px",
+                      fontSize:{sm:'20px',xs:'16px'},
                       textAlign: "center",
                     }}
                   >
@@ -88,13 +87,13 @@ const MemberShipForRecommended = () => {
                   mt: 1,
                   color: COLORS.white.main,
                   justifyContent: "space-between",
-                  height: "210px",
+                  height: {sm:'200px',xs:'150px'},
                   alignItems: "center",
                   padding: "8px",
                 }}
               >
                 <Typography>from only</Typography>
-                <Typography sx={{ fontSize: "48px" }}>
+                <Typography sx={{whiteSpace:'nowrap', fontSize: {md:'48px',sm:'40px',xs:'25px'} }}>
                   (PKR) ₨4,000.00
                 </Typography>
                 <Typography variant="body2">

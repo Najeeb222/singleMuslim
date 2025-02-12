@@ -3,7 +3,6 @@ import { COLORS, userData } from "@muc/constants";
 import { Button, Paper, Stack } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
 import { useState } from "react";
 import { AvTimer, Language, WhereToVote } from "@mui/icons-material";
 import { useNavigate } from "react-router";
@@ -17,8 +16,7 @@ const ProfileCard = () => {
   };
 
   return (
-    <Paper>
-      <Box sx={{ width: "100%" }}>
+    <Paper >
         <Tabs
           value={value}
           component={Stack}
@@ -28,26 +26,29 @@ const ProfileCard = () => {
           indicatorColor="secondary"
           aria-label="secondary tabs example"
           centered
+          sx={{width:'100%'}}
         >
-          {TabsLabel.map((item) => (
-            <Tab
-              sx={{ mx: "10px" }}
-              value={item.value}
-              label={
-                <Button
-                  sx={{
-                    color: COLORS.gray.darkGray,
-                    fontSize: "18px",
-                  }}
-                  startIcon={item.icon}
-                >
-                  {item.title}
-                </Button>
-              }
-            />
-          ))}
+        {TabsLabel.map((item) => (
+  <Tab
+    key={item.value}
+    sx={{
+      color: COLORS.gray.darkGray, 
+      fontSize: "12px",
+      display: "flex",
+      alignItems: "center",
+      gap: "5px",
+      padding:0,
+      justifyContent:'center',
+      direction:{sm:'row',xs:'column'}
+    }}
+    value={item.value}
+    icon={item.icon} 
+    label={item.title}
+  />
+))}
+
         </Tabs>
-      </Box>
+      
 
       {value === 1 && (
         <Stack
@@ -57,7 +58,7 @@ const ProfileCard = () => {
             mx: "auto",
             bgcolor: COLORS.gray.main,
             gap: "16px",
-            padding: "40px",
+            padding:{md:'40px',sm:'20px',xs:'10px'},
             justifyContent: "center",
           }}
         >
@@ -86,6 +87,7 @@ const ProfileCard = () => {
           width: "100%",
           fontSize: "21px",
           padding: "10px 15px",
+          mx:'auto'
         }}
       >
         View all

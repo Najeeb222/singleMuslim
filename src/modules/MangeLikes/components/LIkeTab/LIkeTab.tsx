@@ -3,7 +3,6 @@ const LIkeTab = () => {
   return (
     <>
       <Box
-        component={Paper}
         sx={{
           bgcolor: "white",
           height: "700px",

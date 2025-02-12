@@ -8,19 +8,19 @@ import { Box, Rating, Stack } from "@mui/material";
 import { useNavigate } from "react-router";
 
 const CustomCard = (props: any) => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   return (
     <Card
       sx={{
-        maxWidth: 195,
+        width: { xs: "100%", sm: "180px", md: "195px" }, // Responsive width
         ":hover": {
-          scale: "1.1",
+          transform: "scale(1.1)", // Fixed transform scaling
           transition: "all ease 0.5s",
         },
-        cursor:"pointer"
+        cursor: "pointer",
       }}
-      onClick={()=>navigate(`/user_info/${props?.id}`)}
+      onClick={() => navigate(`/user_info/${props?.id}`)}
     >
       <CardActionArea>
         <CardMedia
@@ -28,7 +28,7 @@ const CustomCard = (props: any) => {
           height="194"
           width={"100%"}
           image={props.img}
-          alt="green iguana"
+          alt={props.name} // Dynamic alt text
           sx={{ position: "relative", objectFit: "cover" }}
         />
         {props.extraPics && (
@@ -36,7 +36,6 @@ const CustomCard = (props: any) => {
             position={"absolute"}
             right={"5%"}
             top={"55%"}
-            bgcolor={"red"}
             width={"37px"}
             height={"20px"}
             sx={{
@@ -45,6 +44,8 @@ const CustomCard = (props: any) => {
               justifyContent: "center",
               textAlign: "center",
               borderRadius: "5px",
+              display: "flex",
+              alignItems: "center",
             }}
           >
             <Typography variant="body1" fontWeight={700}>
@@ -57,10 +58,20 @@ const CustomCard = (props: any) => {
             direction={"row"}
             sx={{ justifyContent: "space-between", pb: "5px" }}
           >
-            <Typography sx={{ color: COLORS.primary.main, fontSize: "18px" }}>
+            <Typography
+              sx={{
+                color: COLORS.primary.main,
+                fontSize: { xs: "14px", md: "18px" },
+              }}
+            >
               {props.name}
             </Typography>
-            <Typography sx={{ color: COLORS.primary.main, fontSize: "18px" }}>
+            <Typography
+              sx={{
+                color: COLORS.primary.main,
+                fontSize: { xs: "14px", md: "18px" },
+              }}
+            >
               {props.age}
             </Typography>
           </Stack>
@@ -80,7 +91,7 @@ const CustomCard = (props: any) => {
               sx={{ width: "20px", height: "14px" }}
             />
           </Stack>
-          {props.ratting && (
+          {props.rating && (
             <Rating
               value={props.rating}
               size="small"
@@ -92,4 +103,5 @@ const CustomCard = (props: any) => {
     </Card>
   );
 };
+
 export default CustomCard;

@@ -15,19 +15,18 @@ export default function BasicSelect() {
   return (
     <Stack
       direction={"row"}
-      sx={{ alignItems: "center", justifyContent: "center", gap: "10px" }}
+      sx={{ alignItems: "center", justifyContent: "center",gap:'16px' }}
     >
-      <Typography sx={{ textWrap: "nowrap" }}>From :</Typography>
-      <FormControl fullWidth>
+      <Typography sx={{width:'80px',textAlign:'end'}}>From :</Typography>
+      <FormControl >
         <Select
           value={data}
           onChange={handleChange}
           sx={{
             color: COLORS.dark.main,
-            bgcolor: COLORS.white.grayWhite,
+            background: "linear-gradient(to bottom, #fff, #e6e6e6)",
             height: "36px",
             width: "118px",
-            backgroundImage: `linear-gradient(top to bottom,rgb(241, 234, 240),rgba(107, 105, 105, 0.07) 50%)`,
           }}
         >
           {menuItemData.map((item) => (

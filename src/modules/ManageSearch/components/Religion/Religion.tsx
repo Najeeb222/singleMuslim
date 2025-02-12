@@ -62,11 +62,14 @@ const Religion = () => {
               width: 185,
               textAlign: "end",
               alignSelf: "center",
+              whiteSpace: "nowrap",
             }}
           >
             Prefer Beard
           </Typography>
-          <ButtonGroup>
+          <ButtonGroup
+            sx={{ display: "flex", flexDirection: { sm: "row", xs: "column" } }}
+          >
             {ButtonData.map((item, i) => (
               <CustomButton
                 title={item}
@@ -89,11 +92,14 @@ const Religion = () => {
               width: 185,
               textAlign: "end",
               alignSelf: "center",
+              whiteSpace: "nowrap",
             }}
           >
             Is a Revert
           </Typography>
-          <ButtonGroup>
+          <ButtonGroup
+            sx={{ display: "flex", flexDirection: { sm: "row", xs: "column" } }}
+          >
             {ButtonData.slice(0, 3).map((item, i) => (
               <CustomButton
                 title={item}

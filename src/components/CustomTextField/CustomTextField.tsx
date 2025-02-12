@@ -87,7 +87,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
           component={InputLabel}
           variant="h6"
           sx={{
-            minWidth: "185px",
+            width: "185px",
             textAlign: "end",
             justifyContent: "end",
             pb: 1,

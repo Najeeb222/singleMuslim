@@ -26,7 +26,7 @@ const Profession = () => {
           >
             Gender :
           </Typography>
-          <ButtonGroup>
+          <ButtonGroup sx={{display:'flex',flexDirection:{sm:'row',xs:'column'}}}>
             {GenderButton.map((item, i) => (
               <CustomButton
                 onClick={() => handleActive(i)}

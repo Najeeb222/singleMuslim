@@ -20,6 +20,7 @@ const LikesContainer = () => {
             onChange={handleChange}
             textColor="secondary"
             indicatorColor="secondary"
+            variant="scrollable"
             sx={{
               ".MuiTabs-indicator": {
                 top: 0,

@@ -2,16 +2,15 @@ import { COLORS } from "@muc/constants";
 import { MembershipStyel } from "@muc/utils";
 import { Favorite, JoinLeft, Message, Visibility } from "@mui/icons-material";
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
+import { useNavigate } from "react-router";
 
 const LikeMeTab = () => {
+  const Navigate=useNavigate()
   return (
     <Stack
-      component={Paper}
       sx={{
-        // justifyContent: "center",
-        // alignItems: "center",
         bgcolor: "white",
-        height: "700px",
+        height: { md: "700px", xs: "100%" },
         padding: "20px",
         mb: "20px",
       }}
@@ -30,12 +29,12 @@ const LikeMeTab = () => {
         mx={"auto"}
         my={"93px"}
       >
-        <Box p={2}>
+        <Stack p={2} >
           <Typography
             variant="h6"
             sx={{
               color: COLORS.primary.main,
-              fontSize: "23px",
+              fontSize: { md: "23px", sm: "20px", xs: "16px" },
               pb: "32px",
               textAlign: "center",
             }}
@@ -48,6 +47,7 @@ const LikeMeTab = () => {
               flexWrap: "wrap",
               justifyContent: "center",
               alignItems: "center",
+              textAlign:'center'
             }}
           >
             {membershipData.map((item) => (
@@ -81,18 +81,21 @@ const LikeMeTab = () => {
               </Stack>
             ))}
           </Stack>
-        </Box>
-        <Button
+          <Button
+          onClick={()=>Navigate('/membership_pakages')}
           sx={{
             fontSize: "22px",
             color: COLORS.primary.main,
-            mx: "auto",
             width: "100%",
+            textAlign: "center",
             padding: "10px 15px",
+          
           }}
         >
           UPGRADE
         </Button>
+        </Stack>
+       
       </Box>
     </Stack>
   );

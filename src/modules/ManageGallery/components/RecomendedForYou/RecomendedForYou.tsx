@@ -9,12 +9,11 @@ export const RecomendedForYou = () => {
         direction={"row"}
         component={Paper}
         elevation={3}
-        
         sx={{
-          cursor:'pointer',
+          cursor: "pointer",
           justifyContent: "space-between",
-          padding: "16px",
-          width: "620px",
+          padding: { sm: "16px", xs: "8px" },
+          maxWidth: "620px",
           marginTop: "16px ",
           mx: "auto",
           backgroundColor: COLORS.white.main,
@@ -34,6 +33,7 @@ export const RecomendedForYou = () => {
           <Typography
             variant="h4"
             sx={{
+              fontSize: { sm: "18px", xs: "14px" },
               display: "flex",
               alignItems: "center",
               gap: "5px",

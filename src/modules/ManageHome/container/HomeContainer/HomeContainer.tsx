@@ -18,16 +18,17 @@ const HomeContainer = () => {
     <AppLayout>
       <Box sx={{ bgcolor: COLORS.gray.main }}>
         <Container maxWidth={"lg"} sx={{ mx: "auto", paddingY: "18px" }}>
-          <Grid container gap={"16px"} paddingX={"16px"}>
-            <Grid item md={4}>
+          <Grid container gap={"16px"} paddingX={{ sm: "16px", xs: "0" }}>
+            <Grid item md={4} xs={12}>
               <UserProfile />
               <Stack
                 direction={"row"}
                 sx={{
                   flexWrap: "wrap",
                   gap: "16px",
-                  padding: "10px",
+                  padding: { md: "10px", xs: "0" },
                   mb: "23px",
+                  justifyContent: "space-between",
                 }}
               >
                 {settingData.map((item) => (
@@ -37,7 +38,9 @@ const HomeContainer = () => {
                     textColor="white"
                     icon={item.icon}
                     iconStyles={item.iconStyles}
-                    OnClick={() => { if (item.path) Navigate(item.path); }}
+                    OnClick={() => {
+                      if (item.path) Navigate(item.path);
+                    }}
                   />
                 ))}
               </Stack>
@@ -76,8 +79,9 @@ const HomeContainer = () => {
                 sx={{
                   flexWrap: "wrap",
                   gap: "16px",
-                  padding: "10px",
+                  padding: { md: "16px", xs: "0" },
                   mb: "23px",
+                  justifyContent: "space-between",
                 }}
               >
                 <CustomDetailCard
@@ -124,7 +128,14 @@ const HomeContainer = () => {
                   }}
                 />
               </Box>
-              <Stack direction={"row"} sx={{ flexWrap: "wrap", gap: "16px" }}>
+              <Stack
+                direction={"row"}
+                sx={{
+                  flexWrap: "wrap",
+                  gap: "16px",
+                  justifyContent: "space-between",
+                }}
+              >
                 {privacyData.map((item) => (
                   <CustomDetailCard
                     title={item.title}
@@ -132,12 +143,14 @@ const HomeContainer = () => {
                     iconStyles={item.iconStyles}
                     backgroundColor={item.backgroundColor}
                     textColor={item.textColor}
-                    OnClick={() => { if (item.path) Navigate(item.path); }}
+                    OnClick={() => {
+                      if (item.path) Navigate(item.path);
+                    }}
                   />
                 ))}
               </Stack>
             </Grid>
-            <Grid item md={7}>
+            <Grid item md={7}  xs={12}>
               <MessagesBox />
               <ProfileCard />
             </Grid>

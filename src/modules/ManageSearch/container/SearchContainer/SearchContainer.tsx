@@ -1,10 +1,17 @@
 import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Link from "@mui/material/Link";
+import {
+  Box,
+  Tabs,
+  Tab,
+  Typography,
+  Breadcrumbs,
+  Link,
+  Container,
+  Divider,
+  Paper,
+  Drawer,
+ 
+} from "@mui/material";
 import { COLORS } from "@muc/constants";
 import {
   AlternateEmail,
@@ -16,9 +23,8 @@ import {
   School,
   Search,
 } from "@mui/icons-material";
-import { Container, Divider, Paper } from "@mui/material";
 import { AppLayout } from "@muc/layout";
-import { CustomTableContent } from "@muc/components";
+import { CustomButton, CustomTableContent } from "@muc/components";
 import QuickSearch from "../../components/QuickSearch/QuickSearch";
 import Religion from "../../components/Religion/Religion";
 import Education from "../../components/Education/Education";
@@ -29,12 +35,13 @@ import SavedTab from "../../components/SavedTab/SavedTab";
 
 export default function SidebarTabs() {
   const [value, setValue] = React.useState(0);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
+    setDrawerOpen(false);
   };
 
-  // Breadcrumb data based on the selected tab
   const breadcrumbPaths = [
     ["Home", "Search", "Quick"],
     ["Home", "Search", "Religion"],
@@ -50,7 +57,7 @@ export default function SidebarTabs() {
       <Box sx={{ bgcolor: COLORS.gray.lightGray, width: "100%" }}>
         <Container
           maxWidth={"lg"}
-          sx={{ bgcolor: COLORS.gray.lightDarkGray, padding: "16px" }}
+          sx={{ bgcolor: COLORS.gray.lightDarkGray, padding:{md:'16px',xs:'0'} }}
         >
           <Typography
             variant="h2"
@@ -62,19 +69,34 @@ export default function SidebarTabs() {
           >
             Search for a match
           </Typography>
+
+          <Box sx={{ display: { xs: "block", md: "none" }, mb: 2 }}>
+            <CustomButton
+              title="Search more"
+              background={COLORS.secondary.main}
+              color={COLORS.white.main}
+              onClick={() => setDrawerOpen(true)}
+              variant="contained"
+              endIcon={<Search />}
+            />
+          </Box>
+
           <Box
             component={Paper}
-            sx={{ display: "flex", bgcolor: COLORS.white.main }}
+            sx={{
+              display: "flex",
+              flexDirection: { md: "row", xs: "column" },
+              bgcolor: COLORS.white.main,
+            }}
           >
-            {/* Sidebar Tabs */}
             <Box
               sx={{
-                width: 270,
-                borderRight: `2px solid ${COLORS.gray.main}`,
+                width: "270px",
+                borderRight: { md: `2px solid ${COLORS.gray.main}` },
                 p: 2,
+                display: { xs: "none", md: "block" },
               }}
             >
-              {/* Breadcrumb Navigation */}
               <Breadcrumbs
                 separator={<ArrowRight fontSize="small" />}
                 aria-label="breadcrumb"
@@ -96,7 +118,6 @@ export default function SidebarTabs() {
                 ))}
               </Breadcrumbs>
               <Divider />
-              {/* Tabs */}
               <Tabs
                 value={value}
                 onChange={handleChange}
@@ -113,7 +134,6 @@ export default function SidebarTabs() {
                     label={item.title}
                     sx={{
                       fontSize: "18px",
-                      mt: i > 3 ? 3 : 0,
                       padding: 2,
                       borderBottom: `2px solid ${COLORS.gray.main}`,
                       minHeight: "48px",
@@ -130,9 +150,44 @@ export default function SidebarTabs() {
               </Tabs>
             </Box>
 
-            {/* Right Side Content */}
-            <Box sx={{ flex: 1, p: 3 }}>
-              {/* Tab Content */}
+            <Drawer
+              anchor="left"
+              open={drawerOpen}
+              onClose={() => setDrawerOpen(false)}
+            >
+              <Box sx={{ width: 250, p: 2 }}>
+                <Typography variant="h6">Select a Tab</Typography>
+                <Divider sx={{ mb: 2 }} />
+                <Tabs
+                  value={value}
+                  onChange={handleChange}
+                  orientation="vertical"
+                  variant="scrollable"
+                  scrollButtons="auto"
+                >
+                  {tabsTitleData.map((item, i) => (
+                    <Tab
+                      key={i}
+                      icon={item.icon}
+                      iconPosition="start"
+                      label={item.title}
+                      sx={{
+                        fontSize: "16px",
+                        minHeight: "48px",
+                        textTransform: "none",
+                        "&.Mui-selected": {
+                          color: COLORS.white.main,
+                          fontWeight: "bold",
+                          backgroundColor: COLORS.secondary.main,
+                        },
+                      }}
+                    />
+                  ))}
+                </Tabs>
+              </Box>
+            </Drawer>
+
+            <Box sx={{ flex: 1, p: {md:3,xs:1}}}>
               {value === 0 && (
                 <CustomTableContent
                   title="Quick Search"
