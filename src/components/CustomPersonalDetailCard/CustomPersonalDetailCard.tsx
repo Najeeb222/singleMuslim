@@ -16,7 +16,7 @@ const CustomPersonalDetailCard = ({
         component={Paper}
         sx={{ padding: "20px", width: "100%", height: "100%" }}
       >
-        <Box sx={{ paddingX: "16px" }}>
+        <Box sx={{ paddingX: { sm: "16px", xs: 0 } }}>
           <Typography
             variant="h2"
             sx={{ fontWeight: "500", color: COLORS.primary.main, pb: "10px" }}

@@ -1,11 +1,11 @@
-import { Box, } from "@mui/material";
+import { Box } from "@mui/material";
 const LIkeTab = () => {
   return (
     <>
       <Box
         sx={{
           bgcolor: "white",
-          height: "700px",
+          height: { md: "700px", xs: "auto" },
           padding: "20px",
           mb: "20px",
         }}

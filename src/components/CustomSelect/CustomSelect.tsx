@@ -94,11 +94,12 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             pb: 1,
             display: "flex",
             gap: "10px",
-            width: "185px",
+            width: {md:'185px',xs:'50%'},
             maxWidth: "266px",
             justifyContent: "end",
             alignItems: "center",
             whiteSpace: "nowrap",
+            fontSize: { md: "16px", sm: "14px", xs: "12px" },
           }}
         >
           {label}
@@ -119,18 +120,30 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       </Typography> */}
 
       <Select
-        sx={{ height: "30px", flexGrow: "1" }}
+        sx={{ height: "30px",width:{sm:'100%',xs:'140px'}}}
         value={value || ""}
         onChange={(event) => handleSelectChange(event.target.value)}
         displayEmpty
         disabled={disabled}
         open={isOpen}
-        fullWidth
         onOpen={() => setIsOpen(true)}
         onClose={() => setIsOpen(false)}
         renderValue={(selected) => {
           if (!selected || (Array.isArray(selected) && selected.length === 0)) {
-            return <em style={{ color: COLORS.dark.main }}>Select any</em>;
+            return (
+              <Typography
+                component={"em"}
+                sx={{
+                  color: COLORS.dark.main,
+                  fontSize: { md: "16px", sm: "14px", xs: "10px" },
+                  overflow: "visible",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Select any
+              </Typography>
+            );
           }
           if (Array.isArray(selected)) {
             return selected.join(", ");
@@ -179,7 +192,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             selected={value === option.value}
             sx={{
               py: "10px",
-              width: "90%",
+              width: { md: "90%", xs: "auto" },
               mx: "auto",
               borderBottom: `1px solid ${COLORS?.gray.lightGray}`,
               "&:last-of-type": {

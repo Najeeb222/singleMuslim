@@ -18,7 +18,7 @@ const SettingLayout = ({ children }: any) => {
         {" "}
         Your Settings
       </Typography>
-      <Stack direction={"row"} py={"20px"}>
+      <Stack direction={{md:'row',xs:'column'}} py={"20px"}>
         <AsideBar />
         <Divider orientation="vertical" />
         <Box width={"100%"} bgcolor={COLORS.white.main} padding={2}>

@@ -31,7 +31,7 @@ const ChangePhoneNumber = () => {
         <Divider />
         <Stack
           sx={{
-            width: "700px",
+            width:{md:'700px',sm:'500px',xs:'100%'},
             mx: "auto",
             mt: "44px",
             gap:3

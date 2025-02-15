@@ -1,7 +1,7 @@
 import { CustomButton, CustomTextField } from "@muc/components";
 import { COLORS } from "@muc/constants";
 import {
-    Box,
+  Box,
   Checkbox,
   Divider,
   FormControlLabel,
@@ -40,15 +40,23 @@ const DeleteProfile = () => {
       </Typography>
       <Divider />
       <FormProvider {...methods}>
-        <Stack gap={3} alignItems={"center"} maxWidth={'700px'}>
+        <Stack
+          gap={3}
+          alignItems={"center"}
+          width={{ md: "700px", xs: "100%" }}
+        >
           <Stack
-            direction="row"
-            mt={'44px'}
+            direction={{ sm: "row", xs: "column" }}
+            mt={"44px"}
             spacing={2}
             alignItems="start"
             justifyContent={"center"}
           >
-            <Typography sx={{ minWidth: 150 }}>Reason for leaving</Typography>
+            <Typography
+              sx={{ minWidth: 150, fontWeight: { xs: "bold", sm: "500" } }}
+            >
+              Reason for leaving
+            </Typography>
             <FormGroup>
               <FormControlLabel
                 control={
@@ -97,17 +105,23 @@ const DeleteProfile = () => {
             label="Comments"
             type="text"
             multiline={2}
-            width="650px"
+            width="100%"
           />
           <CustomTextField
             type="password"
             name="passowrd"
             label="password"
-            width="650px"
+            width={"100%"}
           />
-       <Box display={'flex'} alignSelf={'end'} pr={'15px'}>
-       <CustomButton title="Delete" variant="contained" background={COLORS.red.main} color={COLORS.white.main} width="155px"/>
-       </Box>
+          <Box display={"flex"} alignSelf={"end"} pr={"15px"}>
+            <CustomButton
+              title="Delete"
+              variant="contained"
+              background={COLORS.red.main}
+              color={COLORS.white.main}
+              width="155px"
+            />
+          </Box>
         </Stack>
       </FormProvider>
     </>

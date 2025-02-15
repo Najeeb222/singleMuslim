@@ -18,7 +18,7 @@ const MembershipHistory = () => {
       <Stack alignItems={"center"} gap={"16px"} mt={"44px"}>
         <Stack
           sx={{
-            width: "706px",
+            width: { md: "700px", sm: "500px", xs: "100%" },
             padding: "16px",
             borderRadius: "5px",
             border: "1px solid #ecbc2c",
@@ -27,11 +27,14 @@ const MembershipHistory = () => {
             minHeight: "50px",
           }}
         >
-          <Typography fontSize={"23px"} color="#8A6D3B">
+          <Typography fontSize={{md:'23px',sm:'18px',xs:'15px'}} color="#8A6D3B">
             Upgrade to Gold membership
           </Typography>
           <Divider />
-          <Stack direction={"row"} justifyContent={"space-between"}>
+          <Stack
+            direction={{ md: "row", xs: "column" }}
+            justifyContent={"space-between"}
+          >
             <Typography variant="caption" color="#757474">
               select one of the packages and pay by using the payment method of
               your choice
@@ -44,7 +47,11 @@ const MembershipHistory = () => {
             />
           </Stack>
         </Stack>
-        <Alert severity="success" icon={false} sx={{ width: "706px" }}>
+        <Alert
+          severity="success"
+          icon={false}
+          sx={{ width: { md: "700px", sm: "500px", xs: "100%" } }}
+        >
           There is not membership
         </Alert>
       </Stack>

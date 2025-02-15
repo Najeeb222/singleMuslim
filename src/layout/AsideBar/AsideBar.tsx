@@ -10,6 +10,8 @@ import {
   Stack,
   Divider,
   Breadcrumbs,
+  Drawer,
+  IconButton,
 } from "@mui/material";
 import {
   Edit,
@@ -25,7 +27,7 @@ import {
   Delete,
 } from "@mui/icons-material";
 import { COLORS } from "@muc/constants";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Sidebar = () => {
   const [active, setActive] = useState<{
@@ -45,27 +47,14 @@ const Sidebar = () => {
     console.info("You clicked a breadcrumb.");
   }
 
-  return (
-    <Stack component={Paper}>
-      <Box role="presentation" onClick={handleClick} sx={{ padding: 2 }}>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            <Typography variant="body2">Home</Typography>
-          </Link>
-          <Link
-            to="/user_setting/edit-profile"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <Typography variant="body2">Settings</Typography>
-          </Link>
-          {active.section !== null && active.item !== null && (
-            <Typography color="text.primary" variant="body2">
-              {sidebarItems[active.section].items[active.item].text}
-            </Typography>
-          )}
-        </Breadcrumbs>
-      </Box>
+  const [open, setOpen] = React.useState(false);
 
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen);
+  };
+
+  const DrawerList = (
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       {sidebarItems.map((section, sectionIndex) => (
         <Box key={sectionIndex} sx={{ width: "314px" }}>
           <Typography
@@ -103,7 +92,77 @@ const Sidebar = () => {
           </List>
         </Box>
       ))}
-    </Stack>
+    </Box>
+  );
+  return (
+    <>
+      <Stack component={Paper} sx={{ display: { md: "block", xs: "none" } }}>
+        <Box role="presentation" onClick={handleClick} sx={{ padding: 2 }}>
+          <Breadcrumbs aria-label="breadcrumb">
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <Typography variant="body2">Home</Typography>
+            </Link>
+            <Link
+              to="/user_setting/edit-profile"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <Typography variant="body2">Settings</Typography>
+            </Link>
+            {active.section !== null && active.item !== null && (
+              <Typography color="text.primary" variant="body2">
+                {sidebarItems[active.section].items[active.item].text}
+              </Typography>
+            )}
+          </Breadcrumbs>
+        </Box>
+
+        {sidebarItems.map((section, sectionIndex) => (
+          <Box key={sectionIndex} sx={{ width: "314px" }}>
+            <Typography
+              variant="h6"
+              sx={{
+                bgcolor: COLORS.gray.lightDarkGray,
+                padding: "15px",
+                color: COLORS.gray.darkGray,
+              }}
+            >
+              {section.title}
+            </Typography>
+            <List>
+              {section.items.map((item, itemIndex) => (
+                <div key={itemIndex}>
+                  <ListItem
+                    onClick={() => handleActive(sectionIndex, itemIndex)}
+                    component={Link}
+                    to={`/user_setting/${item.path}`}
+                    sx={{
+                      p: 2,
+                      bgcolor:
+                        active.section === sectionIndex &&
+                        active.item === itemIndex
+                          ? COLORS.gray.main
+                          : COLORS.white.main,
+                    }}
+                  >
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItem>
+                  <Divider />
+                </div>
+              ))}
+            </List>
+          </Box>
+        ))}
+      </Stack>
+      <Box sx={{ display: { md: "none", xs: "block" } }}>
+        <IconButton onClick={toggleDrawer(true)}>
+          <Settings />
+        </IconButton>
+        <Drawer open={open} onClose={toggleDrawer(false)}>
+          {DrawerList}
+        </Drawer>
+      </Box>
+    </>
   );
 };
 

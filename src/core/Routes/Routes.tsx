@@ -8,6 +8,7 @@ import {
   Loging,
   MemberShipPakages,
   Privacy,
+  Success,
   TermAndConditionsPage,
   UserInfo,
   UserSetting,
@@ -29,6 +30,7 @@ const Routes = () => {
       <Route path="/user_setting/:tab" element={<UserSetting />} />
       <Route path="/term_and_conditions" element={<TermAndConditionsPage/>}/>  
       <Route path="/Privacy_and_Security"  element={<Privacy/>}/>
+      <Route path="success-stories" element={<Success/>}/>
     </ReactRoutes>
   );
 };

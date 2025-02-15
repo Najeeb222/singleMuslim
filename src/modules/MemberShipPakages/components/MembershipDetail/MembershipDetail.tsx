@@ -7,13 +7,17 @@ const MembershipDetail = () => {
     <Stack
       component={Paper}
       elevation={1}
-      sx={{ paddingX: "39px", paddingY: "20px", gap: "12px" }}
+      sx={{
+        paddingX: { sm: "39px", xs: "20px" },
+        paddingY: "20px",
+        gap: "12px",
+      }}
     >
       <Typography
         variant="h2"
         sx={{ fontSize: "30px", color: COLORS.secondary.main, fontWeight: 500 }}
       >
-        Upgrade to Gold membership
+        Upgrade to Gold Membership
       </Typography>
       <Typography sx={{ fontSize: "17px", color: COLORS.gray.lightGray }}>
         Select one of the packages below and pay using the payment method of
@@ -21,14 +25,17 @@ const MembershipDetail = () => {
       </Typography>
       <Stack
         direction={{ xs: "column", sm: "row" }}
-        sx={{ alignItems: "center", justifyContent: "space-between" }}
+        sx={{
+          flexWrap:'wrap',
+          gap: { md: "60px", sm: "30px", xs: "20px" },
+        }}
       >
-        {membershipBenefit.map((item) => (
+        {membershipBenefit.map((item, i) => (
           <Stack
+            key={i}
             direction={"row"}
             sx={{
-              maxWidth: "250px",
-              textAlign: "center",
+              width: { sm: "250px", xs: "auto" },
               color: COLORS.secondary.main,
               gap: "10px",
             }}

@@ -11,21 +11,18 @@ const OfficeUseOnly = () => {
         Edit Personal Info - Office Use Only
       </Typography>
       <Divider />
-      <Box py={'44px'} mx={'auto'}>
+      <Box py={"44px"} mx={"auto"}>
         {personalDetails.map((item, index) => (
           <>
-            <Stack
-              direction={"row"}
-              gap={"30px"}
-              padding={"10px"}
-              key={index}
-            >
-              <Typography width={"188px"}>
+            <Stack direction={"row"} gap={"30px"} padding={"10px"} key={index}>
+              <Typography width={{ sm: "188px", xs: "80px" }}>
                 <b> {Object.keys(item)[0]}</b>
               </Typography>
-              <Typography width={"300px"}>{Object.values(item)[0]}</Typography>
+              <Typography width={{ md: "300px", sm: "200px", xs: "130px" }}>
+                {Object.values(item)[0]}
+              </Typography>
             </Stack>
-            <Divider />
+            <Divider sx={{ width: "100%" }} />
           </>
         ))}
       </Box>

@@ -56,11 +56,11 @@ const UpdateProfile = () => {
                 type="text"
                 name="*Post/Zip Code"
               />
-              <Stack direction={"row"} gap={"16px"}>
+              <Stack direction={{ sm: "row", xs: "column" }} gap={"16px"}>
                 <Typography
-                  sx={{ width: "151px" }}
+                  sx={{ width: {sm:'150px',xs:'100%'} }}
                   variant="h6"
-                  textAlign={"end"}
+                  textAlign={{sm:'end',xs:'center'}}
                 >
                   Date of Birth
                 </Typography>

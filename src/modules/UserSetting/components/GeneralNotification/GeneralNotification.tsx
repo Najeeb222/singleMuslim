@@ -13,7 +13,7 @@ const GeneralNotification = () => {
           Notifications / Preferences
         </Typography>
         <Divider />
-        <Stack padding={"45px"}>
+        <Stack padding={{ md: "45px", sm: "20px", xs: "10px" }}>
           <Stack gap={"10px"} color={COLORS.gray.darkGray}>
             <Typography variant="h3" sx={{ fontWeight: 500, fontSize: "24px" }}>
               General Preferences

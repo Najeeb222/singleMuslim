@@ -4,6 +4,7 @@ import { Box, Container, Grid, Stack } from "@mui/material";
 import { useParams } from "react-router";
 import UserInfoCard from "../../components/UserInfoCard/UserInfoCard";
 import { AppLayout } from "@muc/layout";
+import UserProfileDetail from "../../components/UserProfileDetail/UserProfileDetail";
 
 const UserInfoContainer = () => {
   const { id } = useParams();
@@ -16,13 +17,19 @@ const UserInfoContainer = () => {
       <Box sx={{ bgcolor: COLORS.gray.lightDarkGray }}>
         <Container
           maxWidth={"lg"}
-          sx={{ bgcolor: COLORS.white.darkwhite, padding:2}}
+          sx={{ bgcolor: COLORS.white.darkwhite, padding: 2 }}
         >
           <Grid container spacing={2} gap={2}>
-            <Grid item md={3}>
-              <UserInfoCard />
+            <Grid item md={3} xs={12}>
+              <Stack
+                direction={{ md: "column", xs: "column",sm:'row' }}
+                sx={{ justifyContent: "center", alignItems: "center",gap:{md:'0',xs:'20px'} }}
+              >
+                <UserInfoCard />
+                <UserProfileDetail />
+              </Stack>
             </Grid>
-            <Grid item md={8.5}>
+            <Grid item md={8.5} xs={12}>
               <Stack gap={2} mb={2}>
                 {[1, 2].map((_item) => (
                   <CustomReadMoreCard
@@ -35,7 +42,7 @@ const UserInfoContainer = () => {
 
               <Stack direction={"row"} flexWrap={"wrap"} gap={"15px"}>
                 {sections.map((section, index) => (
-                  <Box width={"49%"} key={index}>
+                  <Box width={{ md: "49%", sm: "47%", xs: "100%" }} key={index}>
                     <CustomPersonalDetailCard
                       title={section.title}
                       data={section.data}

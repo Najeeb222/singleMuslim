@@ -112,6 +112,7 @@ export const settingData = [
     backgroundColor: COLORS.blue.main,
     textColor: COLORS.white.main,
     iconStyles: { fontSize: "60px", color: COLORS.blue.main },
+    path: "/user_setting/edit-profile",
   },
   {
     title: "Membership",
@@ -119,6 +120,7 @@ export const settingData = [
     backgroundColor: COLORS.green.main,
     textColor: COLORS.white.main,
     iconStyles: { fontSize: "60px", color: COLORS.green.main },
+    path: "/user_setting/membership-history",
   },
   {
     title: "Block User",
@@ -126,6 +128,7 @@ export const settingData = [
     backgroundColor: COLORS.purple.main,
     textColor: COLORS.white.main,
     iconStyles: { fontSize: "60px", color: COLORS.purple.main },
+    path:'/user_setting/blocked-users'
   },
   {
     title: "Contact Us",

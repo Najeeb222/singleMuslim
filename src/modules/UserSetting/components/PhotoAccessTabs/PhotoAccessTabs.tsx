@@ -24,17 +24,16 @@ const PhotoAccessTabs = () => {
       <Tabs
         value={value}
         onChange={handleChange}
-        textColor="primary"
         centered
+        variant="scrollable"
         sx={{
           "& .MuiTab-root": {
             transition: "0.3s",
-            bgcolor: "transparent",
             color: COLORS.dark.main,
           },
           "& .Mui-selected": {
             bgcolor: COLORS.secondary.main,
-            color: COLORS.white.main, 
+            color: COLORS.white.main,
           },
         }}
       >
@@ -47,57 +46,56 @@ const PhotoAccessTabs = () => {
         ))}
       </Tabs>
 
-      <Paper sx={{   textAlign: "center" }}>
+      <Paper sx={{ textAlign: "center" }}>
         {value === 0 && (
           <>
-            <Typography variant="body1" sx={{ bgcolor: COLORS.gray.lightDarkGray,paddingY:'20px' }}>
-              Members who have access to view your private photos
-            </Typography>
             <Typography
               variant="body1"
-              sx={{py:'25px', fontWeight: "bold" }}
+              sx={{ bgcolor: COLORS.gray.lightDarkGray, paddingY: "20px" }}
             >
+              Members who have access to view your private photos
+            </Typography>
+            <Typography variant="body1" sx={{ py: "25px", fontWeight: "bold" }}>
               No members have access to your private photos
             </Typography>
           </>
         )}
         {value === 1 && (
-             <>
-             <Typography variant="body1" sx={{ bgcolor: COLORS.gray.lightDarkGray,paddingY:'20px' }}>
-             Members who have requested to view your private photos
-             </Typography>
-             <Typography
-               variant="body1"
-               sx={{py:'25px', fontWeight: "bold" }}
-             >
-              You have no private photo requests
-             </Typography>
-           </> 
-        )}
-        {value === 2 && (
-            <>
-            <Typography variant="body1" sx={{ bgcolor: COLORS.gray.lightDarkGray,paddingY:'20px' }}>
-            Members who's private photos you have access to view
-            </Typography>
+          <>
             <Typography
               variant="body1"
-              sx={{py:'25px', fontWeight: "bold" }}
+              sx={{ bgcolor: COLORS.gray.lightDarkGray, paddingY: "20px" }}
             >
+              Members who have requested to view your private photos
+            </Typography>
+            <Typography variant="body1" sx={{ py: "25px", fontWeight: "bold" }}>
+              You have no private photo requests
+            </Typography>
+          </>
+        )}
+        {value === 2 && (
+          <>
+            <Typography
+              variant="body1"
+              sx={{ bgcolor: COLORS.gray.lightDarkGray, paddingY: "20px" }}
+            >
+              Members who's private photos you have access to view
+            </Typography>
+            <Typography variant="body1" sx={{ py: "25px", fontWeight: "bold" }}>
               You don't have access to any members private photos
             </Typography>
           </>
         )}
         {value === 3 && (
-            <>
-            <Typography variant="body1" sx={{ bgcolor: COLORS.gray.lightDarkGray,paddingY:'20px' }}>
-            Members who's private photos you have requested to view
-            </Typography>
+          <>
             <Typography
               variant="body1"
-              sx={{py:'25px', fontWeight: "bold" }}
+              sx={{ bgcolor: COLORS.gray.lightDarkGray, paddingY: "20px" }}
             >
+              Members who's private photos you have requested to view
+            </Typography>
+            <Typography variant="body1" sx={{ py: "25px", fontWeight: "bold" }}>
               You have not requested to view any members private photos
-
             </Typography>
           </>
         )}

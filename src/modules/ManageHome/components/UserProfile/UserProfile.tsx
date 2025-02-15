@@ -12,10 +12,10 @@ import {
   Paper,
   Rating,
   Stack,
-  Switch,
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router";
+import LiveAndHideSwitch from "../LiveAndHideSwitch/LiveAndHideSwitch";
 
 const UserProfile = () => {
   const Navigate = useNavigate();
@@ -54,7 +54,7 @@ const UserProfile = () => {
             Logout
           </Button>
           <Box display="flex" alignItems="center" gap={2}>
-            <Switch />
+            <LiveAndHideSwitch/>
           </Box>
         </Stack>
 
@@ -112,12 +112,12 @@ const UserData = [
       <PhotoAlbum sx={{ color: COLORS.secondary.main, fontSize: "32px" }} />
     ),
     title: "My Photos",
-    path: "/user_setting/edit-profile",
+    path: "/user_setting/edit-photos",
   },
   {
     icon: <Settings sx={{ color: COLORS.secondary.main, fontSize: "32px" }} />,
     title: "Preferences",
-    path: "/user_setting/preferences",
+    path: "/user_setting/edit-profile",
   },
   {
     icon: (

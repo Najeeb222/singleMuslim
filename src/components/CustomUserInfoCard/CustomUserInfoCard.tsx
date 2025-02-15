@@ -10,12 +10,18 @@ interface userInfoType {
 }
 const CustomUserInfoCard = (props: userInfoType) => {
   return (
-    <Box sx={{ height: "316px", width: "316px", position: "relative" }}>
+    <Box
+      sx={{
+        height: { md: "316px", xs: "100%" },
+        width: "100%",
+        position: "relative",
+      }}
+    >
       <Box
         component={"img"}
         src="/assets/images/girl-img.jpg"
         alt="Profile Pic"
-        sx={{ width: "100%", height: "100%" }}
+        sx={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
       <Typography
         sx={{
@@ -74,9 +80,9 @@ const CustomUserInfoCard = (props: userInfoType) => {
           >
             +4
           </Typography> */}
-    <Box position={'absolute'} bottom={0}>
-    {props.extraImgs}
-    </Box>
+          <Box position={"absolute"} bottom={0}>
+            {props.extraImgs}
+          </Box>
         </Box>
 
         <Stack

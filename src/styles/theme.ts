@@ -88,58 +88,58 @@ theme = {
         },
       },
     },
-    MuiSwitch: {
-      styleOverrides: {
-        root: {
-          width: 80,
-          height: 25,
-          padding: 0,
-        },
-        switchBase: {
-          padding: 2,
-          "&.Mui-checked": {
-            transform: "translateX(55px)",
-            color: "white",
-            "& + .MuiSwitch-track": {
-              backgroundColor: "green",
+    // MuiSwitch: {
+    //   styleOverrides: {
+    //     root: {
+    //       width: 80,
+    //       height: 25,
+    //       padding: 0,
+    //     },
+    //     switchBase: {
+    //       padding: 2,
+    //       "&.Mui-checked": {
+    //         transform: "translateX(55px)",
+    //         color: "white",
+    //         "& + .MuiSwitch-track": {
+    //           backgroundColor: "green",
 
-              "&:before": {
-                content: '"Live"',
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: "12px",
-                color: "white",
-              },
-            },
-          },
-        },
-        thumb: {
-          width: 20,
-          height: 20,
-        },
-        track: {
-          backgroundColor: COLORS.red.main,
-          borderRadius: 30,
-          position: "relative",
-          opacity: 1,
-          "&:before": {
-            content: '"Hidden"',
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            justifyContent: "end",
-            alignItems: "center",
-            fontSize: "12px",
-            color: "white",
-          },
-        },
-      },
-    },
+    //           "&:before": {
+    //             content: '"Live"',
+    //             position: "absolute",
+    //             width: "100%",
+    //             height: "100%",
+    //             display: "flex",
+    //             justifyContent: "center",
+    //             alignItems: "center",
+    //             fontSize: "12px",
+    //             color: "white",
+    //           },
+    //         },
+    //       },
+    //     },
+    //     thumb: {
+    //       width: 20,
+    //       height: 20,
+    //     },
+    //     track: {
+    //       backgroundColor: COLORS.red.main,
+    //       borderRadius: 30,
+    //       position: "relative",
+    //       opacity: 1,
+    //       "&:before": {
+    //         content: '"Hidden"',
+    //         position: "absolute",
+    //         width: "100%",
+    //         height: "100%",
+    //         display: "flex",
+    //         justifyContent: "end",
+    //         alignItems: "center",
+    //         fontSize: "12px",
+    //         color: "white",
+    //       },
+    //     },
+    //   },
+    // },
 
     MuiButton: {
       styleOverrides: {

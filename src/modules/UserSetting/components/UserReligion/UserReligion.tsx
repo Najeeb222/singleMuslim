@@ -79,7 +79,12 @@ const UserReligion = () => {
             >
               Prefer Beard
             </Typography>
-            <ButtonGroup>
+            <ButtonGroup
+              sx={{
+                display: "flex",
+                flexDirection: { sm: "row", xs: "column" },
+              }}
+            >
               {ButtonData.map((item, i) => (
                 <CustomButton
                   title={item}
@@ -140,14 +145,14 @@ const UserReligion = () => {
               value: item,
             }))}
           />
-           <Box sx={{ alignSelf: "end" }}>
-          <CustomButton
-            title="Update"
-            variant="contained"
-            background={COLORS.secondary.main}
-            color={COLORS.white.main}
-          />
-        </Box>
+          <Box sx={{ alignSelf: "end" }}>
+            <CustomButton
+              title="Update"
+              variant="contained"
+              background={COLORS.secondary.main}
+              color={COLORS.white.main}
+            />
+          </Box>
         </FormProvider>
       </Stack>
     </>

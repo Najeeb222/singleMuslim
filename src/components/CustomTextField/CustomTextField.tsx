@@ -9,7 +9,12 @@ import {
 } from "@mui/material";
 import { Controller, RegisterOptions, useFormContext } from "react-hook-form";
 import { COLORS } from "@muc/constants";
-import { CloseRounded, Info, Visibility, VisibilityOff } from "@mui/icons-material";
+import {
+  CloseRounded,
+  Info,
+  Visibility,
+  VisibilityOff,
+} from "@mui/icons-material";
 
 interface CustomTextFieldProps {
   name: string;
@@ -87,7 +92,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
           component={InputLabel}
           variant="h6"
           sx={{
-            width: "185px",
+            width: { md: "185px", xs: "35%" },
             textAlign: "end",
             justifyContent: "end",
             pb: 1,
@@ -95,7 +100,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
             alignItems: "center",
             gap: "8px",
             color: COLORS.gray.darkGray,
-            fontSize: "16px",
+            fontSize: {md:'16px',sm:'14px',xs:'12px'},
           }}
         >
           {label}
@@ -133,6 +138,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
               "& .MuiOutlinedInput-input": {
                 padding: "6px 12px",
               },
+              width:{md:'100%',xs:'100%',sm:'100%'}
             }}
             variant="outlined"
             {...field}
@@ -141,7 +147,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
             defaultValue={defaultValue || ""}
             multiline={multiline}
             error={!!fieldState.error}
-            fullWidth
+            
             helperText={
               showHelperText && fieldState.error?.message ? (
                 <Typography

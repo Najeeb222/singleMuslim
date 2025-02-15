@@ -76,7 +76,9 @@ const UserPersonal = () => {
           >
             Smokes
           </Typography>
-          <ButtonGroup>
+          <ButtonGroup
+            sx={{ display: "flex", flexDirection: { sm: "row", xs: "column" } }}
+          >
             {Smoke.map((item, i) => (
               <CustomButton
                 title={item}

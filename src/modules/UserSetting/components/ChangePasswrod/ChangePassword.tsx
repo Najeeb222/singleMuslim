@@ -16,7 +16,12 @@ const ChangePassword = () => {
         Change Password
       </Typography>
       <Divider />
-      <Stack gap={2} width={"700px"} alignItems={"end"} mt={"44px"}>
+      <Stack
+        gap={2}
+        width={{ md: "700px", sm: "500px", xs: "100%" }}
+        alignItems={"end"}
+        mt={"44px"}
+      >
         <FormProvider {...methods}>
           <Stack gap={2} width={"100%"} alignItems={"end"}>
             <CustomTextField
