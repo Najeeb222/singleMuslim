@@ -21,7 +21,7 @@ const OnlineUserCard = (props: OnlineUserCardProps) => {
   return (
     <Card
       sx={{
-        width: "320px",
+        width: {sm:'45%',xs:'100%', md:'30%'},
         ":hover": {
           scale: "1.1",
           transition: "all ease 0.5s",

@@ -1,6 +1,7 @@
 import { SearchContainer, SearchResultContainer } from "@muc/modules";
 import {
 
+  ContactUs,
   Gallery,
   Home,
   LandingScreen,
@@ -30,7 +31,8 @@ const Routes = () => {
       <Route path="/user_setting/:tab" element={<UserSetting />} />
       <Route path="/term_and_conditions" element={<TermAndConditionsPage/>}/>  
       <Route path="/Privacy_and_Security"  element={<Privacy/>}/>
-      <Route path="success-stories" element={<Success/>}/>
+      <Route path="/success-stories" element={<Success/>}/>
+      <Route path ="/contact_us" element={<ContactUs/>}/>
     </ReactRoutes>
   );
 };

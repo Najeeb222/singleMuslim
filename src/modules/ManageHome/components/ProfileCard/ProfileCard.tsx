@@ -58,7 +58,7 @@ const ProfileCard = () => {
             mx: "auto",
             bgcolor: COLORS.gray.main,
             gap: "16px",
-            padding:{md:'40px',sm:'20px',xs:'10px'},
+            padding:{md:'40px',sm:'0px',xs:'0px'},
             justifyContent: "center",
           }}
         >

@@ -24,7 +24,7 @@ const Footer = () => {
                 key={i}
                 sx={{
                   margin: "40px 0px 10px",
-                  padding: "0 20px 0 60px",
+                  padding: {sm:"0 20px 0 60px",xs:"0 10px 0px 20px"},
                   whiteSpace: "nowrap",
                 }}
               >
@@ -66,6 +66,7 @@ const Footer = () => {
             direction={{ md: "row", xs: "column" }}
             justifyContent={"space-between"}
             px={"15px"}
+            mt={'20px'}
           >
             <Typography variant="body1">
               Copyright © 2025 Single Muslim. All rights reserved. All third

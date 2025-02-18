@@ -128,15 +128,15 @@ export const settingData = [
     backgroundColor: COLORS.purple.main,
     textColor: COLORS.white.main,
     iconStyles: { fontSize: "60px", color: COLORS.purple.main },
-    path:'/user_setting/blocked-users'
+    path: "/user_setting/blocked-users",
   },
   {
-    title: "Contact Us",
+    title: "Communication",
     icon: React.createElement(Sms),
     backgroundColor: COLORS.purple.dark,
     textColor: COLORS.white.main,
     iconStyles: { fontSize: "60px", color: COLORS.purple.dark },
-    path: "/contact_us",
+    path: "/user_setting/communication",
   },
 ];
 
@@ -147,6 +147,7 @@ export const privacyData = [
     backgroundColor: "transparent",
     textColor: COLORS.orange.main,
     iconStyles: { fontSize: "60px", color: COLORS.orange.main },
+    path: "success-stories",
   },
   {
     title: "In The News",

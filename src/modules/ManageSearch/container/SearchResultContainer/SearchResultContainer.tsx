@@ -12,6 +12,7 @@ const SearchResultContainer = () => {
           <Container
             disableGutters
             sx={{
+              py:2,
               maxWidth: "lg",
               mx: "auto",
               bgcolor: COLORS.gray.whiteGray,
@@ -20,7 +21,7 @@ const SearchResultContainer = () => {
             <SearchBar />
             <Typography
               sx={{
-                fontSize: "32px",
+                fontSize: {md:'32px',sm:'20px',xs:'17px'},
                 textAlign: "center",
                 color: COLORS.gray.lightGray,
                 padding: "20px",

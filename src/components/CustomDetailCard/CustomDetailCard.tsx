@@ -22,7 +22,7 @@ const CustomDetailCard: React.FC<CustomDetailCardProps> = (props) => {
       onClick={OnClick}
       sx={{
         cursor: "pointer",
-        width: { sm: "45%", xs: "100%" },
+        width: { sm: "45%", xs: "45%" },
         borderRadius: "16px",
         justifyContent: "space-between",
       }}

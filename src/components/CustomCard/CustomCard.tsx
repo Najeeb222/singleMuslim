@@ -13,9 +13,9 @@ const CustomCard = (props: any) => {
   return (
     <Card
       sx={{
-        width: { xs: "100%", sm: "180px", md: "195px" }, // Responsive width
+        width: { xs: "45%", sm: "180px", md: "195px" }, 
         ":hover": {
-          transform: "scale(1.1)", // Fixed transform scaling
+          transform: "scale(1.1)", 
           transition: "all ease 0.5s",
         },
         cursor: "pointer",
@@ -28,7 +28,7 @@ const CustomCard = (props: any) => {
           height="194"
           width={"100%"}
           image={props.img}
-          alt={props.name} // Dynamic alt text
+          alt={props.name} 
           sx={{ position: "relative", objectFit: "cover" }}
         />
         {props.extraPics && (

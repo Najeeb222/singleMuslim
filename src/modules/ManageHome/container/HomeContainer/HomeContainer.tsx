@@ -17,7 +17,11 @@ const HomeContainer = () => {
   return (
     <AppLayout>
       <Box sx={{ bgcolor: COLORS.gray.main }}>
-        <Container maxWidth={"lg"} sx={{ mx: "auto", paddingY: "18px" }}>
+        <Container
+          maxWidth={"lg"}
+          disableGutters
+          sx={{ mx: "auto", paddingY: "18px" }}
+        >
           <Grid container gap={"16px"} paddingX={{ sm: "16px", xs: "0" }}>
             <Grid item md={4} xs={12}>
               <UserProfile />
@@ -96,6 +100,7 @@ const HomeContainer = () => {
                   icon={<SmsOutlined />}
                   textColor="white"
                   backgroundColor={COLORS.green.lightGreen}
+                  OnClick={() => Navigate("/contact_us")}
                   iconStyles={{
                     fontSize: "60px",
                     color: COLORS.green.lightGreen,
@@ -150,7 +155,7 @@ const HomeContainer = () => {
                 ))}
               </Stack>
             </Grid>
-            <Grid item md={7}  xs={12}>
+            <Grid item md={7} xs={12}>
               <MessagesBox />
               <ProfileCard />
             </Grid>

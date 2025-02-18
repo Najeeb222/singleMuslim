@@ -12,7 +12,9 @@ const SearchBar = () => {
       <Stack
         bgcolor={COLORS.white.main}
         justifyContent={"space-between"}
-        direction={"row"}
+        py={2}
+        gap={'16px'}
+        direction={{ sm: "row", xs: "column" }}
       >
         <Stack
           direction={"row"}
@@ -57,14 +59,21 @@ const SearchBar = () => {
                 color={COLORS.white.main}
               />
             </Stack>
-            <Stack direction={"row"} gap={"10px"}>
+            <Stack direction={"row"} mt={2}>
               <CustomButton
+                width="80%"
                 variant="contained"
                 title="Refine search"
-                background={COLORS.gray.main}
-                width="'174px"
+                background={COLORS.secondary.main}
+                color={COLORS.white.main}
               />
-              <CustomButton variant="contained" title="Reset search" />
+              <CustomButton
+                variant="contained"
+                title="Reset search"
+                width="80%"
+                background={COLORS.secondary.main}
+                color={COLORS.white.main}
+              />
             </Stack>
           </Stack>
         </FormProvider>
