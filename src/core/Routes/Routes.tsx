@@ -1,6 +1,6 @@
 
 import { SecureRoutes } from "@muc/hoc";
-import { SearchContainer, SearchResultContainer } from "@muc/modules";
+// import { SearchContainer, SearchResultContainer } from "@muc/modules";
 import {
   ContactUs,
   Gallery,
@@ -8,7 +8,7 @@ import {
   LandingScreen,
   Likes,
   Loging,
-  MemberShipPakages,
+  // MemberShipPakages,
   Messages,
   Privacy,
   Success,
