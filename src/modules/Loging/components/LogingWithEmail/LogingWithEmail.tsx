@@ -5,7 +5,7 @@ import {
   Checkbox,
   FormControlLabel,
   Stack,
-  // TextField,
+
   Typography,
 } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
@@ -31,15 +31,15 @@ const LogingWithEmail = () => {
       </Typography>
       <Stack direction={"column"} sx={{ gap: "20px" }}>
         <FormProvider {...methods}>
-          <CustomTextField type="email" placeholder="Username/Email" name="email"  height="40px" />
-          <CustomTextField type="password" placeholder="password" name="password"  height="40px"  />
+          <CustomTextField type="email" placeholder="Username/Email" name="email" height="40px" />
+          <CustomTextField type="password" placeholder="password" name="password" height="40px" />
 
           <FormControlLabel
             control={<Checkbox />}
             label="Remember Me"
             sx={{ color: "white" }}
           />
-          <Box component={'img'} src="/assets/images/captcha.png" sx={{width:'250px',alignSelf:'center'}}/>
+          <Box component={'img'} src="/assets/images/captcha.png" sx={{ width: '250px', alignSelf: 'center' }} />
           <CustomButton
             variant="contained"
             title="LOGIN"
@@ -48,7 +48,7 @@ const LogingWithEmail = () => {
             width="350px"
             height="56px"
           />
-          <Link to={"/"} style={{color:COLORS.white.main}}>Forgotten Password</Link>
+          <Link to={"/"} style={{ color: COLORS.white.main }}>Forgotten Password</Link>
         </FormProvider>
       </Stack>
     </Stack>
@@ -56,4 +56,3 @@ const LogingWithEmail = () => {
 };
 
 export default LogingWithEmail;
- 

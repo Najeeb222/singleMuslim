@@ -1,3 +1,5 @@
+
+import { SecureRoutes } from "@muc/hoc";
 import { SearchContainer, SearchResultContainer } from "@muc/modules";
 import {
   ContactUs,
@@ -20,12 +22,20 @@ const Routes = () => {
   return (
     <ReactRoutes>
       <Route path="/" element={<Home />} />
-      <Route path={"/following"} element={<Gallery />} />
-      <Route path="/search" element={<SearchContainer />} />
-      <Route path="/messages" element={<Messages />} />
-      <Route path="/search/search_result" element={<SearchResultContainer />} />
-      <Route path="/membership_pakages" element={<MemberShipPakages />} />
-      <Route path={"/likes"} element={<Likes />} />
+      <Route path={"/following"} element={
+        // <SecureRoutes>
+        <Gallery />
+        // </SecureRoutes>
+
+      } />
+      {/* <Route path="/search" element={<SearchContainer />} /> */}
+      {/* <Route path="/search/search_result" element={<SearchResultContainer />} /> */}
+      {/* <Route path="/membership_pakages" element={<MemberShipPakages />} /> */}
+      <Route element={<SecureRoutes/>}>
+        <Route path="/messages" element={<Messages />} />
+        <Route path={"/likes"} element={<Likes />
+      } />
+      </Route>
       <Route path="/landing_screen" element={<LandingScreen />} />
       <Route path="/loging" element={<Loging />} />
       <Route path="/user_info/:id" element={<UserInfo />} />

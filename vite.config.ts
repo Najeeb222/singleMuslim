@@ -22,6 +22,7 @@ export default defineConfig({
       "@muc/styles": path.resolve(__dirname, "src/styles/theme.ts"),
       "@muc/layout": path.resolve(__dirname, "src/layout/layout.ts"),
       "@muc/hooks": path.resolve(__dirname, "src/hooks/hooks.ts"),
+      "@muc/hoc": path.resolve(__dirname, "src/hoc/hoc.ts"),
       "@muc/providers": path.resolve(__dirname, "./src/providers/providers.ts"),
       "@muc/context": path.resolve(__dirname, "./src/context/context.ts"),
       "@muc/appwrite": path.resolve(__dirname, "./src/appwrite/appwrite.ts"),

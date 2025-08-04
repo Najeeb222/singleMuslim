@@ -16,6 +16,7 @@
       "@muc/styles": ["src/styles/theme.ts"],
       "@muc/layout": ["src/layout/layout.ts"],
       "@muc/hooks": ["src/hooks/hooks.ts"],
+      "@muc/hoc": ["src/hoc/hoc.ts"],
       "@muc/types": ["src/types/types.ts"],
       "@muc/validations": ["src/validations/validations.ts"],
       "@muc/providers": ["src/providers/providers.ts"],
