@@ -16,12 +16,15 @@ const SendingChatTextField = () => {
     <Box
       sx={{
         border: "1px solid #d3d3d3",
-        height: "100px",
+      
+        height: "80px",
+        borderRadius:'8px',
+        px: "10px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         gap: "10px",
-        paddingX: "10px",
+      
       }}
     >
       <TextField
@@ -29,12 +32,12 @@ const SendingChatTextField = () => {
         value={value}
         onChange={OnChangeValue}
         sx={{
-          height: "59px",
           width: "87%",
         }}
       />
       <Button
         onClick={submitHandle}
+        startIcon={<Telegram />}
         sx={{
           minWidth: "13%",
           paddingX: "10px",
@@ -44,7 +47,7 @@ const SendingChatTextField = () => {
           justifyContent: "center",
         }}
       >
-        <Telegram sx={{ marginRight: "5px" }} /> Send
+        Send
       </Button>
     </Box>
   );

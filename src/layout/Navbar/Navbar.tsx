@@ -12,12 +12,18 @@ import { NavLink } from "react-router-dom";
 import { Divider, Stack, Typography } from "@mui/material";
 import { COLORS } from "@muc/constants";
 import {
+  // AccountCircle,
   Favorite,
+  // Feed,
+  FeedOutlined,
   HomeOutlined,
+  MessageOutlined,
+  // Person,
   PhotoLibraryOutlined,
-  SearchOutlined,
+  // SearchOutlined,
 } from "@mui/icons-material";
-import { MessageContainer } from "@muc/modules";
+
+import { AccountMenu } from "@muc/components";
 const drawerWidth = 320;
 const navItems = [
   {
@@ -26,19 +32,24 @@ const navItems = [
     icon: <HomeOutlined sx={{ fontSize: "33px" }} />,
   },
   {
-    title: "Gallery",
-    path: "/gallery",
+    title: "Following",
+    path: "/following",
     icon: <PhotoLibraryOutlined sx={{ fontSize: "33px" }} />,
   },
   {
-    title: "Search",
-    path: "/search",
-    icon: <SearchOutlined sx={{ fontSize: "33px" }} />,
+    title: "Stories",
+    path: "/stories",
+    icon: <FeedOutlined sx={{ fontSize: "33px" }} />,
   },
   {
     title: "Likes",
     path: "/likes",
     icon: <Favorite sx={{ fontSize: "33px" }} />,
+  },
+  {
+    title: "Messages",
+    path: "/messages",
+    icon: <MessageOutlined sx={{ fontSize: "33px" }} />,
   },
 ];
 export default function Navbar(props: any) {
@@ -107,6 +118,8 @@ export default function Navbar(props: any) {
                 width: "100%",
               }}
             >
+
+              {/* logo */}
               <Box
                 component={"img"}
                 src="/assets/images/single-muslim-logo.png"
@@ -117,45 +130,50 @@ export default function Navbar(props: any) {
 
               <Box
                 sx={{
-                  display: { xs: "none", sm: "flex", alignItems: "center" },
+                  display: { xs: "none", sm: "flex", alignItems: "center",},
                 }}
               >
                 {navItems.map((item, i) => (
-                  <NavLink
-                    to={item.path}
-                    key={item.title}
-                    style={({ isActive }) => ({
-                      textDecoration: "none",
-                      padding: " 0 6px",
-                      border: "none",
-                      borderBottom: isActive
-                        ? `2px solid ${COLORS.primary.main}`
-                        : "none",
-                      color: i === 3 ? "red" : COLORS.secondary.main,
-                      backgroundColor: isActive ? "#e2f2f9" : "transparent",
-                    })}
-                  >
-                    <Stack
-                      sx={{
-                        alignItems: "center",
-                        height: 65,
-                        justifyContent: "space-evenly",
-                        padding: "10px",
-                      }}
+                  <>
+                    <NavLink
+                      to={item.path}
+                      key={item.title}
+                      style={({ isActive }) => ({
+                        textDecoration: "none",
+                        padding: " 0 6px",
+                        border: "none",
+                        borderBottom: isActive
+                          ? `2px solid ${COLORS.primary.main}`
+                          : "none",
+                        color: i === 3 ? "red" : COLORS.secondary.main,
+                        backgroundColor: isActive ? "#e2f2f9" : "transparent",
+                      })}
                     >
-                      {item.icon}
-                      <Typography
+                      <Stack
                         sx={{
-                          color: i === 3 ? "red" : COLORS.secondary.main,
-                          fontSize: "10px",
+                          alignItems: "center",
+                          height: 65,
+                          justifyContent: "space-evenly",
+                          padding: "10px",
+                    
                         }}
                       >
-                        {item.title}
-                      </Typography>
-                    </Stack>
-                  </NavLink>
+                        {item.icon}
+                        <Typography
+                          sx={{
+                            color: i === 3 ? "red" : COLORS.secondary.main,
+                            fontSize: "10px",
+                          }}
+                        >
+                          {item.title}
+                        </Typography>
+                      </Stack>
+                    </NavLink>
+                  </>
                 ))}
-                <MessageContainer />
+                {/* <MessageContainer /> */}
+                {/* ACCOUNT MENU */}
+                <AccountMenu />
               </Box>
             </Box>
             <IconButton

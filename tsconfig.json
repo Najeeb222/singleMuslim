@@ -20,7 +20,7 @@
       "@muc/validations": ["src/validations/validations.ts"],
       "@muc/providers": ["src/providers/providers.ts"],
       "@muc/context": ["src/context/context.ts"],
-      "@muc/firebase": ["src/firebase/firebase.ts"],
+      "@muc/appwrite": ["src/appwrite/appwrite.ts"],
       "@muc/utils": ["src/utils/utils.ts"]
     },
     /* Bundler mode */

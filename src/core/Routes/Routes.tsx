@@ -1,6 +1,5 @@
 import { SearchContainer, SearchResultContainer } from "@muc/modules";
 import {
-
   ContactUs,
   Gallery,
   Home,
@@ -8,6 +7,7 @@ import {
   Likes,
   Loging,
   MemberShipPakages,
+  Messages,
   Privacy,
   Success,
   TermAndConditionsPage,
@@ -20,8 +20,9 @@ const Routes = () => {
   return (
     <ReactRoutes>
       <Route path="/" element={<Home />} />
-      <Route path={"/gallery"} element={<Gallery />} />
+      <Route path={"/following"} element={<Gallery />} />
       <Route path="/search" element={<SearchContainer />} />
+      <Route path="/messages" element={<Messages />} />
       <Route path="/search/search_result" element={<SearchResultContainer />} />
       <Route path="/membership_pakages" element={<MemberShipPakages />} />
       <Route path={"/likes"} element={<Likes />} />
@@ -29,10 +30,10 @@ const Routes = () => {
       <Route path="/loging" element={<Loging />} />
       <Route path="/user_info/:id" element={<UserInfo />} />
       <Route path="/user_setting/:tab" element={<UserSetting />} />
-      <Route path="/term_and_conditions" element={<TermAndConditionsPage/>}/>  
-      <Route path="/Privacy_and_Security"  element={<Privacy/>}/>
-      <Route path="/success-stories" element={<Success/>}/>
-      <Route path ="/contact_us" element={<ContactUs/>}/>
+      <Route path="/term_and_conditions" element={<TermAndConditionsPage />} />
+      <Route path="/Privacy_and_Security" element={<Privacy />} />
+      <Route path="/stories" element={<Success />} />
+      <Route path="/contact_us" element={<ContactUs />} />
     </ReactRoutes>
   );
 };

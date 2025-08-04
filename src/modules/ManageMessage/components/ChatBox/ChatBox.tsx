@@ -9,17 +9,17 @@ const ChatBox = () => {
       <Stack
         sx={{
           bgcolor: COLORS.gray.whiteGray,
-          height: "400px",
+          height: "60vh",
           overflowY: "auto",
           padding: "10px 16px 26px",
           width: "100%",
           display: "flex",
 
           "&::-webkit-scrollbar": {
-            width: "5px",
+            width: "9px",
           },
           "&::-webkit-scrollbar-thumb": {
-            backgroundColor: COLORS.dark.lightblack,
+            backgroundColor: COLORS.primary.main,
             borderRadius: "10px",
           },
           "&::-webkit-scrollbar-track": {
@@ -27,7 +27,11 @@ const ChatBox = () => {
           },
         }}
       >
-        <IncomingChat />
+{
+  [1,2,3,4].map(()=>(
+    <>
+  
+            <IncomingChat />
         <Typography
           sx={{
             bgcolor: COLORS.dark.grayblack,
@@ -46,7 +50,9 @@ const ChatBox = () => {
         <Box sx={{ display: "flex", alignSelf: "end" }}>
           <SendingChat />
         </Box>
-      </Stack>
+  </>
+  ))
+}      </Stack>
     </>
   );
 };

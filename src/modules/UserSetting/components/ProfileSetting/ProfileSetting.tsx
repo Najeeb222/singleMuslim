@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
-// A default component for unknown tabs
+
 
 const ProfileSetting = () => {
-  const { tab } = useParams(); // Get the dynamic tab from URL
+  const { tab } = useParams(); 
 
   const renderComponent = () => {
     switch (tab) {

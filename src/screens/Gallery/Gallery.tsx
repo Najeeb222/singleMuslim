@@ -5,6 +5,7 @@ const Gallery = () => {
   return (
 <>
 <GalleryContainer/>
+
 </>
   )
 }

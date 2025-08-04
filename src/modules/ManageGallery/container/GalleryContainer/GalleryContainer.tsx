@@ -5,6 +5,8 @@ import { Box, Container } from "@mui/material";
 import { COLORS } from "@muc/constants";
 import MemberShipForRecommended from "../../components/MemberShipForRecommended/MemberShipForRecommended";
 
+
+
 const GalleryContainer = () => {
   return (
     <AppLayout>
@@ -14,6 +16,8 @@ const GalleryContainer = () => {
           disableGutters
           sx={{ bgcolor: COLORS.gray.main }}
         >
+       
+
           <SearchFilter />
           <MemberShipForRecommended />
           <GalleryCard />

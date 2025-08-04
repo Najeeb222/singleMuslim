@@ -14,9 +14,9 @@ const MemberShipForRecommended = () => {
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
     setOpen(false);
@@ -24,9 +24,9 @@ const MemberShipForRecommended = () => {
 
   return (
     <React.Fragment>
-      <Box onClick={handleClickOpen}>
+      {/* <Box onClick={handleClickOpen}> */}
         <RecomendedForYou />
-      </Box>
+      {/* </Box> */}
       <Dialog
         open={open}
         onClose={handleClose}

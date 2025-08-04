@@ -29,7 +29,7 @@ const PhotoAccessTabs = () => {
         sx={{
           "& .MuiTab-root": {
             transition: "0.3s",
-            color: COLORS.dark.main,
+          
           },
           "& .Mui-selected": {
             bgcolor: COLORS.secondary.main,

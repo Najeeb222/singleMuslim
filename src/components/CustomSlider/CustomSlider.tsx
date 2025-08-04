@@ -5,7 +5,11 @@ import { Box, Button, Stack } from "@mui/material";
 import { COLORS, sliderData, sliderSetting } from "@muc/constants";
 import { useNavigate } from "react-router";
 
-function Fade() {
+interface FadeProps {
+  isButton?: boolean;
+}
+
+function Fade({ isButton }: FadeProps) {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -29,42 +33,45 @@ function Fade() {
           />
         ))}
       </Slider>
-      <Stack
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: `translate(-50%,-50%)`,
-        }}
-      >
-        <Button
-          onClick={handleNavigate}
+
+      {isButton && (
+        <Stack
           sx={{
-            bgcolor: COLORS.primary.main,
-            color: "white",
-            width: "386px",
-            borderRadius: "30px",
-            height: "54px",
-            fontSize: "24px",
-            mb: "16px",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: `translate(-50%,-50%)`,
           }}
         >
-          LOGING
-        </Button>
-        <Button
-          sx={{
-            bgcolor: COLORS.secondary.main,
-            color: "white",
-            width: "386px",
-            borderRadius: "30px",
-            height: "54px",
-            fontSize: "24px",
-            mb: "16px",
-          }}
-        >
-          REGISTER
-        </Button>
-      </Stack>
+          <Button
+            onClick={handleNavigate}
+            sx={{
+              bgcolor: COLORS.primary.main,
+              color: "white",
+              width: "386px",
+              borderRadius: "30px",
+              height: "54px",
+              fontSize: "24px",
+              mb: "16px",
+            }}
+          >
+            LOGING
+          </Button>
+          <Button
+            sx={{
+              bgcolor: COLORS.secondary.main,
+              color: "white",
+              width: "386px",
+              borderRadius: "30px",
+              height: "54px",
+              fontSize: "24px",
+              mb: "16px",
+            }}
+          >
+            REGISTER
+          </Button>
+        </Stack>
+      )}
     </Box>
   );
 }

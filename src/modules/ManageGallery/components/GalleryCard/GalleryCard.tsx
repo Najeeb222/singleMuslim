@@ -1,44 +1,28 @@
-import { CustomCard,  } from "@muc/components";
+import { CustomCard } from "@muc/components";
 import { userData } from "@muc/constants";
-import { Stack } from "@mui/material";
+import { Grid } from "@mui/material";
 
 const GalleryCard = () => {
   return (
     <>
-      <Stack
-        direction={"row"}
-        sx={{
-          flexWrap: "wrap",
-          gap: "21px",
-          justifyContent: "center",
-          mt: "25px",
-          padding: "16px",
-        }}
-      >
-        {userData.map((item) => (
-          <CustomCard
-            name={item.name}
-            age={item.age}
-            img={item.img}
-            rating={item.rating}
-            location={item.location}
-            countryFlag={item.countryflag}
-            profession={item.profession}
-          />
-        ))}
-           {/* {userData.slice(0, 12).map((item) => (
-            <OnlineUserCard
-              key={item.name}
+      <Grid container>
+        {userData.slice(0, 20).map((item) => (
+          <Grid md={3} p={2}>
+            <CustomCard
+              key={item.id}
+              id={item.id}
+              // height={'350px'}
               name={item.name}
               age={item.age}
-              profession={item.profession}
               img={item.img}
-              religon={item.religon}
+              rating={item.rating}
               location={item.location}
               countryFlag={item.countryflag}
+              profession={item.profession}
             />
-          ))} */}
-      </Stack>
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 };

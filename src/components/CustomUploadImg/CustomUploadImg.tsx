@@ -5,6 +5,7 @@ import {
   CircularProgress,
   Stack,
   Divider,
+  // Divider,
 } from "@mui/material";
 import { COLORS } from "@muc/constants";
 interface CustomUploadImgProps {
@@ -51,7 +52,7 @@ const CustomUploadImg: React.FC<CustomUploadImgProps> = ({
       setTimeout(() => {
         setPreview(reader.result as string);
         setLoading(false);
-      }, 1500); // Simulating upload time
+      }, 1500); 
     };
   };
 
@@ -124,7 +125,7 @@ const CustomUploadImg: React.FC<CustomUploadImgProps> = ({
         </Box>
         <Box>{children}</Box>
       </Stack>
-      <Divider />
+      {/* <Divider /> */}
     </Stack>
   );
 };

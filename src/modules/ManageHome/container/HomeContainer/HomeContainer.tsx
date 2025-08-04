@@ -1,19 +1,16 @@
 import { AppLayout } from "@muc/layout";
-import UserProfile from "../../components/UserProfile/UserProfile";
-import MessagesBox from "../../components/MessagesBox/MessagesBox";
-import ProfileCard from "../../components/ProfileCard/ProfileCard";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import { CustomDetailCard } from "@muc/components";
-import { COLORS, privacyData, settingData } from "@muc/constants";
-import {
-  PlayCircleFilledWhiteOutlined,
-  QuestionAnswer,
-  SmsOutlined,
-} from "@mui/icons-material";
-import { useNavigate } from "react-router";
+
+
+import { Box, Container, Grid, Paper } from "@mui/material";
+
+import { COLORS, userData } from "@muc/constants";
+import { CustomProfileCard } from "@muc/components";
+import HomePagination from "../../components/HomePagination/HomePagination";
+
+
 
 const HomeContainer = () => {
-  const Navigate = useNavigate();
+
   return (
     <AppLayout>
       <Box sx={{ bgcolor: COLORS.gray.main }}>
@@ -22,8 +19,32 @@ const HomeContainer = () => {
           disableGutters
           sx={{ mx: "auto", paddingY: "18px" }}
         >
-          <Grid container gap={"16px"} paddingX={{ sm: "16px", xs: "0" }}>
-            <Grid item md={4} xs={12}>
+          <Grid container spacing={3} component={Paper} elevation={2}>
+            {userData.slice(0, 12).map((item) => (
+              <Grid md={3} sm={4} xs={12} p={2}>
+                <CustomProfileCard
+                  age={item.age}
+                  img={item.img}
+                  name={item.name}
+                  countryFlag={item.countryflag}
+                  location={item.location}
+                />
+                {/* <CustomCard
+                              key={item.name}
+                              name={item.name}
+                              age={item.age}
+                              img={item.img}
+                              location={item.location}
+                              countryFlag={item.countryflag}
+                              id={item?.id}
+                            /> */}
+              </Grid>
+            ))}
+          </Grid>
+          <HomePagination />
+
+          {/* <Grid container gap={"16px"} paddingX={{ sm: "16px", xs: "0" }}>
+            {/* <Grid item md={4} xs={12}>
               <UserProfile />
               <Stack
                 direction={"row"}
@@ -154,12 +175,13 @@ const HomeContainer = () => {
                   />
                 ))}
               </Stack>
-            </Grid>
-            <Grid item md={7} xs={12}>
-              <MessagesBox />
-              <ProfileCard />
-            </Grid>
-          </Grid>
+            </Grid> */}
+          {/* <Grid item md={} xs={12}> */}
+          {/* <MessagesBox /> */}
+          {/* </Grid> */}
+          {/* </Grid> */}
+
+          {/* <ProfileCard /> */}
         </Container>
       </Box>
     </AppLayout>

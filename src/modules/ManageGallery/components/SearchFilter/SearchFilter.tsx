@@ -4,6 +4,7 @@ import { Female,  Male, Transgender } from "@mui/icons-material";
 
 import { ButtonGroup, Slider, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
+import DeepSearchDialog from "../DeepSearchDialog/DeepSearchDialog";
 
 function valuetext(value: number) {
   return `${value}`;
@@ -21,6 +22,7 @@ const SearchFilter = () => {
 
   return (
     <>
+    
       <Typography
         variant="h2"
         sx={{
@@ -40,11 +42,12 @@ const SearchFilter = () => {
           gap: "10px",
           alignItems: "center",
           padding: "20px 10px 18px 19px",
-          justifyContent: "space-between",
+          // justifyContent: "space-between",
           bgcolor: COLORS.white.main,
           width:'100%',
         }}
       >
+            <DeepSearchDialog />
         <Stack direction={"row"} gap={"16px"} alignItems={"center"} justifyContent={'center'}>
           <Typography
             sx={{
@@ -71,7 +74,7 @@ const SearchFilter = () => {
                     ? "#5cb85c"
                     : " linear-gradient(to bottom, #fff, #e6e6e6)"
                 }
-                width="149px"
+                // width="149px"
                 height="34px"
               />
             ))}
@@ -87,7 +90,7 @@ const SearchFilter = () => {
             min={18}
             max={100}
             getAriaValueText={valuetext}
-            sx={{ width: {sm:'253px',xs:'190px'} }}
+            sx={{ width: {sm:'200px',xs:'190px'} }}
           />
         </Stack>
       </Stack>

@@ -100,7 +100,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
             alignItems: "center",
             gap: "8px",
             color: COLORS.gray.darkGray,
-            fontSize: {md:'16px',sm:'14px',xs:'12px'},
+            fontSize: { md: "16px", sm: "14px", xs: "12px" },
           }}
         >
           {label}
@@ -133,12 +133,14 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
             sx={{
               minHeight: 34,
               "& .MuiOutlinedInput-root": {
-                paddingRight: "12px", // Ensure space for visibility icon
+              
               },
               "& .MuiOutlinedInput-input": {
                 padding: "6px 12px",
+                height: height ? height : "100%",
+                width:'100%'
               },
-              width:{md:'100%',xs:'100%',sm:'100%'}
+              width: { md: "100%", xs: "100%", sm: "100%" },
             }}
             variant="outlined"
             {...field}
@@ -147,7 +149,6 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
             defaultValue={defaultValue || ""}
             multiline={multiline}
             error={!!fieldState.error}
-            
             helperText={
               showHelperText && fieldState.error?.message ? (
                 <Typography

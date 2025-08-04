@@ -9,7 +9,7 @@ const ShowUserDetailPath = () => {
         sx={{
           background: "linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%)",
           width: "100%",
-          flexFlow: 1,
+          // flexFlow: 1,
           height: "100px",
           gap: "16px",
           p: "16px",

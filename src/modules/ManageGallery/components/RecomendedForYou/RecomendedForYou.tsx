@@ -10,6 +10,7 @@ export const RecomendedForYou = () => {
         component={Paper}
         elevation={3}
         sx={{
+          mb:4,
           cursor: "pointer",
           justifyContent: "space-between",
           padding: { sm: "16px", xs: "8px" },

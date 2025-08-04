@@ -1,12 +1,12 @@
-import { CustomButton, CustomSelect } from "@muc/components";
+import {  CustomSelect } from "@muc/components";
 import {
-  COLORS,
+  
   CurrentIncome,
   EducationLevel,
   Languages,
   Professions,
 } from "@muc/constants";
-import { Box } from "@mui/material";
+
 import { FormProvider, useForm } from "react-hook-form";
 
 const Education = () => {
@@ -62,14 +62,8 @@ const Education = () => {
             value: item,
           }))}
         />
-        <Box sx={{ alignSelf: "end" }}>
-          <CustomButton
-            title="Search Now"
-            variant="contained"
-            background="#5cb85c"
-            color={COLORS.white.main}
-          />
-        </Box>
+   
+   
       </FormProvider>
     </>
   );

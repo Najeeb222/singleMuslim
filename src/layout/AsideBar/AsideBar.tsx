@@ -19,7 +19,6 @@ import {
   Notifications,
   Photo,
   Lock,
-  Email,
   Phone,
   History,
   Block,
@@ -172,9 +171,9 @@ const sidebarItems = [
   {
     title: "Profile",
     items: [
-      { text: "Edit My Profile", icon: <Edit />, path: "edit-profile" },
+      { text: "Edit Personal Info", icon: <Edit />, path: "edit-profile" },
       {
-        text: "Edit Personal Info",
+        text: "Edit Account Detail",
         icon: <AccountCircle />,
         path: "edit-personal-info",
       },
@@ -200,7 +199,7 @@ const sidebarItems = [
         icon: <AccountCircle />,
         path: "change-username",
       },
-      { text: "Change Email", icon: <Email />, path: "change-email" },
+      // { text: "Change Email", icon: <Email />, path: "change-email" },
       { text: "Change Password", icon: <Lock />, path: "change-password" },
       { text: "Change Phone", icon: <Phone />, path: "change-phone" },
       {

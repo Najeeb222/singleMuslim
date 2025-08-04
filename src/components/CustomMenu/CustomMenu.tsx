@@ -26,7 +26,7 @@ export default function BasicSelect() {
             color: COLORS.dark.main,
             background: "linear-gradient(to bottom, #fff, #e6e6e6)",
             height: "36px",
-            width: "118px",
+            
           }}
         >
           {menuItemData.map((item) => (

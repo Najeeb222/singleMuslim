@@ -13,3 +13,7 @@ export { default as CustomButton } from "./CustomButton/CustomButton";
 export { default as CustomTableContent } from "./CustomTableContent/CustomTableContent";
 export { default as CustomSwithButton } from "./CustomSwithButton/CustomSwithButton";
 export { default as CustomUploadImg } from "./CustomUploadImg/CustomUploadImg";
+export { default as AccountMenu } from "./AccountMenu/AccountMenu";
+export { default as CustomProfileCard } from "./CustomProfileCard/CustomProfileCard";
+export { default as DeepSearchTitleHighLight } from "./DeepSearchTitleHighLight/DeepSearchTitleHighLight";
+export { default as ScrollToTopButton } from "./ScrollToTopButton/ScrollToTopButton";

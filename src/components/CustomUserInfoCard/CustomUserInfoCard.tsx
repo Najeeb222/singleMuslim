@@ -3,7 +3,7 @@ import { Box, Rating, Stack, Typography } from "@mui/material";
 
 interface userInfoType {
   status: string;
-  extraImgs: React.ReactNode;
+  // extraImgs: React.ReactNode;
   name: string;
   age: string;
   flage: string;
@@ -52,37 +52,10 @@ const CustomUserInfoCard = (props: userInfoType) => {
             cursor: "pointer",
           }}
         >
-          {/* <Box
-            sx={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "50%",
-            }}
-            component={"img"}
-            src="/assets/images/girl-img.jpg"
-          />
-          <Typography
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%,-50%)",
-              color: COLORS.white.main,
-              borderRadius: "50%",
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "rgba(0, 0, 0, 0.4)",
-              fontSize: "18px",
-            }}
-          >
-            +4
-          </Typography> */}
-          <Box position={"absolute"} bottom={0}>
+        
+          {/* <Box position={"absolute"} bottom={0}>
             {props.extraImgs}
-          </Box>
+          </Box> */}
         </Box>
 
         <Stack
