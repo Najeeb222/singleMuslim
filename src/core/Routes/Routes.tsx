@@ -31,10 +31,10 @@ const Routes = () => {
       {/* <Route path="/search" element={<SearchContainer />} /> */}
       {/* <Route path="/search/search_result" element={<SearchResultContainer />} /> */}
       {/* <Route path="/membership_pakages" element={<MemberShipPakages />} /> */}
-      <Route element={<SecureRoutes/>}>
+      <Route element={<SecureRoutes />}>
         <Route path="/messages" element={<Messages />} />
         <Route path={"/likes"} element={<Likes />
-      } />
+        } />
       </Route>
       <Route path="/landing_screen" element={<LandingScreen />} />
       <Route path="/loging" element={<Loging />} />

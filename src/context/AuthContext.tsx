@@ -11,7 +11,7 @@ const AuthContextData = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     // const [user, setUser] = useState<boolean>(false);
-    const user=false
+    const user = false
 
     return (
         <AuthContextData.Provider value={{ user }}>

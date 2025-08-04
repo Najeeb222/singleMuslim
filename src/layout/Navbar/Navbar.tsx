@@ -8,56 +8,83 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Divider, Stack, Typography } from "@mui/material";
 import { COLORS } from "@muc/constants";
 import {
-  // AccountCircle,
   Favorite,
-  // Feed,
   FeedOutlined,
   HomeOutlined,
   MessageOutlined,
-  // Person,
   PhotoLibraryOutlined,
-  // SearchOutlined,
 } from "@mui/icons-material";
+import { AccountMenu, LoginDialogBox } from "@muc/components";
+import { useAuth } from "@muc/context";
 
-import { AccountMenu } from "@muc/components";
+
 const drawerWidth = 320;
+
 const navItems = [
   {
     title: "HOME",
     path: "/",
     icon: <HomeOutlined sx={{ fontSize: "33px" }} />,
+    requiresAuth: false,
   },
   {
     title: "Following",
     path: "/following",
     icon: <PhotoLibraryOutlined sx={{ fontSize: "33px" }} />,
+    requiresAuth: false,
   },
   {
     title: "Stories",
     path: "/stories",
     icon: <FeedOutlined sx={{ fontSize: "33px" }} />,
+    requiresAuth: false,
   },
   {
     title: "Likes",
     path: "/likes",
     icon: <Favorite sx={{ fontSize: "33px" }} />,
+    requiresAuth: true,
   },
   {
     title: "Messages",
     path: "/messages",
     icon: <MessageOutlined sx={{ fontSize: "33px" }} />,
+    requiresAuth: true,
   },
 ];
+
 export default function Navbar(props: any) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [loginDialogOpen, setLoginDialogOpen] = React.useState(false);
+  const [pendingPath, setPendingPath] = React.useState<string | null>(null);
+
+  const navigate = useNavigate();
+  const { user, } = useAuth(); // assuming useAuth exposes login()
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen((prev) => !prev);
+  };
+
+  const handleNavClick = (item: typeof navItems[number], e: React.MouseEvent) => {
+    if (item.requiresAuth && !user) {
+      e.preventDefault();
+      setPendingPath(item.path);
+      setLoginDialogOpen(true);
+    }
+ 
+  };
+
+  const handleLoginSuccess = () => {
+
+    if (pendingPath) {
+      navigate(pendingPath);
+    }
+    setPendingPath(null);
   };
 
   const drawer = (
@@ -70,10 +97,11 @@ export default function Navbar(props: any) {
       sx={{ textAlign: "center" }}
     >
       <List>
-        {navItems.map((item) => (
+        {navItems.map((item,) => (
           <ListItem key={item.title} disablePadding>
             <NavLink
               to={item.path}
+              onClick={(e) => handleNavClick(item, e)}
               style={{
                 textDecoration: "none",
                 width: "100%",
@@ -118,7 +146,6 @@ export default function Navbar(props: any) {
                 width: "100%",
               }}
             >
-
               {/* logo */}
               <Box
                 component={"img"}
@@ -130,49 +157,45 @@ export default function Navbar(props: any) {
 
               <Box
                 sx={{
-                  display: { xs: "none", sm: "flex", alignItems: "center",},
+                  display: { xs: "none", sm: "flex", alignItems: "center" },
                 }}
               >
                 {navItems.map((item, i) => (
-                  <>
-                    <NavLink
-                      to={item.path}
-                      key={item.title}
-                      style={({ isActive }) => ({
-                        textDecoration: "none",
-                        padding: " 0 6px",
-                        border: "none",
-                        borderBottom: isActive
-                          ? `2px solid ${COLORS.primary.main}`
-                          : "none",
-                        color: i === 3 ? "red" : COLORS.secondary.main,
-                        backgroundColor: isActive ? "#e2f2f9" : "transparent",
-                      })}
+                  <NavLink
+                    to={item.path}
+                    key={item.title}
+                    onClick={(e) => handleNavClick(item, e)}
+                    style={({ isActive }) => ({
+                      textDecoration: "none",
+                      padding: "0 6px",
+                      border: "none",
+                      borderBottom: isActive
+                        ? `2px solid ${COLORS.primary.main}`
+                        : "none",
+                      color: i === 3 ? "red" : COLORS.secondary.main,
+                      backgroundColor: isActive ? "#e2f2f9" : "transparent",
+                    })}
+                  >
+                    <Stack
+                      sx={{
+                        alignItems: "center",
+                        height: 65,
+                        justifyContent: "space-evenly",
+                        padding: "10px",
+                      }}
                     >
-                      <Stack
+                      {item.icon}
+                      <Typography
                         sx={{
-                          alignItems: "center",
-                          height: 65,
-                          justifyContent: "space-evenly",
-                          padding: "10px",
-                    
+                          color: i === 3 ? "red" : COLORS.secondary.main,
+                          fontSize: "10px",
                         }}
                       >
-                        {item.icon}
-                        <Typography
-                          sx={{
-                            color: i === 3 ? "red" : COLORS.secondary.main,
-                            fontSize: "10px",
-                          }}
-                        >
-                          {item.title}
-                        </Typography>
-                      </Stack>
-                    </NavLink>
-                  </>
+                        {item.title}
+                      </Typography>
+                    </Stack>
+                  </NavLink>
                 ))}
-                {/* <MessageContainer /> */}
-                {/* ACCOUNT MENU */}
                 <AccountMenu />
               </Box>
             </Box>
@@ -187,6 +210,7 @@ export default function Navbar(props: any) {
           </Toolbar>
         </Box>
       </AppBar>
+
       <nav>
         <Drawer
           container={container}
@@ -209,6 +233,15 @@ export default function Navbar(props: any) {
           {drawer}
         </Drawer>
       </nav>
+
+      <LoginDialogBox
+        open={loginDialogOpen}
+        onClose={() => {
+          setLoginDialogOpen(false);
+          setPendingPath(null);
+        }}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 }

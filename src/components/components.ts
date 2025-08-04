@@ -17,3 +17,4 @@ export { default as AccountMenu } from "./AccountMenu/AccountMenu";
 export { default as CustomProfileCard } from "./CustomProfileCard/CustomProfileCard";
 export { default as DeepSearchTitleHighLight } from "./DeepSearchTitleHighLight/DeepSearchTitleHighLight";
 export { default as ScrollToTopButton } from "./ScrollToTopButton/ScrollToTopButton";
+export { default as LoginDialogBox } from "./LoginDialogBox/LoginDialogBox";
