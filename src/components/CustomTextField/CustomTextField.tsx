@@ -6,10 +6,7 @@ import { Controller, RegisterOptions, useFormContext } from "react-hook-form";
 import {
     Box,
     TextField,
- 
     Typography,
-
-
 } from "@mui/material";
 import { COLORS } from "@muc/constants";
 interface CustomTextFieldProps {
@@ -24,7 +21,7 @@ interface CustomTextFieldProps {
     readOnly?: boolean;
     maxLength?: number;
     disabled?: boolean;
-    placeholder: string;
+    placeholder?: string;
     description?: string;
     autoComplete?: string;
     defaultValue?: string;
